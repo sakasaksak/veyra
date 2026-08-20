@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veyra — Categories</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f7;
+      color: #111;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 22px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 14px;
+    }
+
+    .hero {
+      background: white;
+      text-align: center;
+      padding: 70px 7%;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: #666;
+      font-size: 18px;
+    }
+
+    .categories {
+      padding: 60px 7%;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .category {
+      background: white;
+      padding: 45px 25px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    }
+
+    .category h2 {
+      margin-bottom: 12px;
+    }
+
+    .category p {
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .category a {
+      display: inline-block;
+      background: #111;
+      color: white;
+      text-decoration: none;
+      padding: 11px 20px;
+      border-radius: 5px;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 30px;
+      text-align: center;
+      background: #111;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">VEYRA</div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="categories.html">Categories</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Shop by Category</h1>
+    <p>Discover fashion products across Veyra.</p>
+  </section>
+
+  <section class="categories">
+    <div class="grid">
+
+      <div class="category">
+        <h2>Women</h2>
+        <p>Discover women's fashion.</p>
+        <a href="#">Explore</a>
+      </div>
+
+      <div class="category">
+        <h2>Men</h2>
+        <p>Discover men's fashion.</p>
+        <a href="#">Explore</a>
+      </div>
+
+      <div class="category">
+        <h2>Shoes</h2>
+        <p>Find shoes and footwear.</p>
+        <a href="#">Explore</a>
+      </div>
+
+      <div class="category">
+        <h2>Bags</h2>
+        <p>Discover bags and accessories.</p>
+        <a href="#">Explore</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Veyra. Fashion discovery made simple.
+  </footer>
+
+</body>
+</html>

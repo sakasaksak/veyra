@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veyra — Products</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f7;
+      color: #111;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 22px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 14px;
+    }
+
+    .hero {
+      background: white;
+      text-align: center;
+      padding: 60px 7%;
+    }
+
+    .hero h1 {
+      font-size: 46px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: #666;
+      font-size: 18px;
+    }
+
+    .products {
+      padding: 50px 7%;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    }
+
+    .card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 18px;
+    }
+
+    .card h2 {
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .card p {
+      color: #777;
+      margin-bottom: 15px;
+    }
+
+    .card a {
+      display: inline-block;
+      background: #111;
+      color: white;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 5px;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 30px;
+      text-align: center;
+      background: #111;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">VEYRA</div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="categories.html">Categories</a>
+      <a href="products.html">Products</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Discover Products</h1>
+    <p>Explore fashion products curated by Veyra.</p>
+  </section>
+
+  <section class="products">
+
+    <div class="grid">
+
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"
+          alt="White sneakers"
+        >
+
+        <div class="card-content">
+          <h2>Classic White Sneakers</h2>
+          <p>Clean and versatile everyday sneakers.</p>
+          <a href="#">View Product</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80"
+          alt="Leather shoulder bag"
+        >
+
+        <div class="card-content">
+          <h2>Leather Shoulder Bag</h2>
+          <p>A stylish everyday bag.</p>
+          <a href="#">View Product</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=80"
+          alt="Classic jacket"
+        >
+
+        <div class="card-content">
+          <h2>Classic Jacket</h2>
+          <p>A timeless jacket for everyday style.</p>
+          <a href="#">View Product</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80"
+          alt="Fashion outfit"
+        >
+
+        <div class="card-content">
+          <h2>Modern Fashion Outfit</h2>
+          <p>Discover a modern fashion look.</p>
+          <a href="#">View Product</a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 Veyra. Fashion discovery made simple.
+  </footer>
+
+</body>
+</html>

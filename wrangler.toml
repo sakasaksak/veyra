@@ -1,0 +1,11 @@
+name = "veyra"
+main = "worker.js"
+compatibility_date = "2026-08-21"
+
+[assets]
+directory = "."
+
+[[d1_databases]]
+binding = "DB"
+database_name = "veyra-db"
+database_id = "18436765-0d2c-44bd-9358-0434249e2387"

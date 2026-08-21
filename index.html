@@ -2,32 +2,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta name="mitgo-verification" content="833edc8a-4cd7-4bc2-999e-cdf6f8f3c007">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Veyra — Discover Fashion Worth Finding</title>
+  <title>Veyra — Discover Fashion You'll Love</title>
 
-  <meta
-    name="description"
-    content="Discover fashion worth finding with Veyra. Explore women's fashion, men's style, shoes, bags, accessories and curated fashion collections."
-  >
+  <meta name="description" content="Veyra helps you discover clothing, shoes, accessories and trending fashion from across the web. Explore curated styles and discover your next favorite look.">
+
+  <meta name="keywords" content="fashion, clothing, shoes, accessories, women's fashion, men's fashion, fashion trends, fashion deals, Veyra">
+
+  <meta name="theme-color" content="#111111">
 
   <style>
+    :root {
+      --black: #111111;
+      --dark: #1b1b1b;
+      --white: #ffffff;
+      --cream: #f7f4ee;
+      --soft: #f2f1ee;
+      --gray: #777777;
+      --border: #dedbd5;
+      --max: 1440px;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }
-
-    :root {
-      --black: #111;
-      --white: #fff;
-      --cream: #f5f1ea;
-      --soft: #faf9f7;
-      --gray: #74716c;
-      --line: #e5e1da;
     }
 
     html {
@@ -35,14 +39,13 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--white);
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+      background: #fff;
       color: var(--black);
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
+      line-height: 1.5;
     }
 
     img {
@@ -50,463 +53,407 @@
       width: 100%;
     }
 
-    /* TOP BAR */
-
-    .topbar {
-      background: var(--black);
-      color: white;
-      text-align: center;
-      padding: 9px 20px;
-
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    /* HEADER */
+    button,
+    input {
+      font: inherit;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: auto;
+    }
+
+    /* =========================
+       TOP BAR
+    ========================= */
+
+    .announcement {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 10px 15px;
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
 
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-
-      background: rgba(255,255,255,.96);
-      border-bottom: 1px solid var(--line);
-
-      backdrop-filter: blur(16px);
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid #e8e8e8;
     }
 
-    .nav {
-      max-width: 1450px;
-      min-height: 78px;
-
-      margin: auto;
-      padding: 0 35px;
-
-      display: flex;
+    .header-main {
+      min-height: 76px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      justify-content: space-between;
-      gap: 30px;
+      gap: 25px;
     }
 
     .logo {
-      font-size: 27px;
+      font-size: 28px;
       font-weight: 900;
-      letter-spacing: 7px;
-      white-space: nowrap;
+      letter-spacing: .22em;
     }
 
-    .nav-links {
+    .main-nav {
       display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 28px;
-
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1.3px;
+      gap: 30px;
     }
 
-    .nav-links a {
+    .main-nav a {
       position: relative;
-      padding: 8px 0;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 28px 0;
     }
 
-    .nav-links a::after {
+    .main-nav a::after {
       content: "";
-
       position: absolute;
       left: 0;
-      bottom: 0;
-
+      bottom: 20px;
       width: 0;
       height: 1px;
-
-      background: var(--black);
-
-      transition: width .25s;
+      background: #111;
+      transition: .25s ease;
     }
 
-    .nav-links a:hover::after {
+    .main-nav a:hover::after {
       width: 100%;
     }
 
-    .nav-actions {
+    .header-actions {
       display: flex;
+      justify-content: flex-end;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
     }
 
-    .search {
-      width: 190px;
+    .icon-button {
+      width: 40px;
+      height: 40px;
+      border: 0;
+      background: transparent;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: background .2s ease;
     }
 
-    .search input {
-      width: 100%;
-
-      border: 1px solid var(--line);
-      border-radius: 999px;
-
-      background: var(--soft);
-
-      padding: 10px 15px;
-
-      outline: none;
-
-      font-size: 11px;
+    .icon-button:hover {
+      background: #f1f1f1;
     }
 
-    /* HERO */
+    .icon {
+      width: 19px;
+      height: 19px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
-      min-height: 690px;
-
+      min-height: 700px;
+      display: flex;
+      align-items: center;
       position: relative;
       overflow: hidden;
 
-      display: flex;
-      align-items: flex-end;
-
       background:
         linear-gradient(
-          to top,
-          rgba(0,0,0,.65),
-          rgba(0,0,0,.05) 65%
+          90deg,
+          rgba(0,0,0,.70),
+          rgba(0,0,0,.34) 50%,
+          rgba(0,0,0,.03)
         ),
         url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=2200&q=90")
-        center / cover;
+        center/cover no-repeat;
     }
 
     .hero-content {
-      width: 100%;
-      max-width: 1450px;
-
-      margin: auto;
-      padding: 90px 35px;
-
+      max-width: 650px;
       color: white;
+      padding: 90px 0;
     }
 
     .eyebrow {
-      margin-bottom: 18px;
-
-      font-size: 10px;
-      font-weight: bold;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .2em;
       text-transform: uppercase;
-      letter-spacing: 4px;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-      max-width: 900px;
-
-      font-family: Georgia, serif;
-      font-size: clamp(58px, 9vw, 125px);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(52px, 7vw, 92px);
       font-weight: 400;
-
-      line-height: .88;
-      letter-spacing: -6px;
-
-      margin-bottom: 30px;
+      line-height: .96;
+      margin-bottom: 28px;
     }
 
     .hero p {
-      max-width: 550px;
-
-      color: rgba(255,255,255,.85);
-
-      font-size: 15px;
-      line-height: 1.8;
-
-      margin-bottom: 30px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
+      max-width: 520px;
+      color: rgba(255,255,255,.9);
+      font-size: 17px;
+      line-height: 1.75;
+      margin-bottom: 34px;
     }
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-
-      padding: 14px 23px;
-
-      background: white;
-      color: var(--black);
-
-      font-size: 10px;
-      font-weight: bold;
+      min-height: 50px;
+      padding: 0 28px;
+      background: #111;
+      color: #fff;
+      border: 1px solid #111;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .1em;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-
-      transition: all .25s;
+      cursor: pointer;
+      transition: .25s ease;
     }
 
     .button:hover {
-      background: var(--black);
-      color: white;
+      background: #fff;
+      color: #111;
     }
 
-    .button.dark {
-      background: var(--black);
-      color: white;
+    .button-light {
+      background: #fff;
+      color: #111;
+      border-color: #fff;
     }
 
-    .button.dark:hover {
-      background: white;
-      color: var(--black);
+    .button-light:hover {
+      background: transparent;
+      color: #fff;
     }
 
-    /* INTRO */
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
 
-    .intro {
-      max-width: 1050px;
-
-      margin: auto;
-      padding: 110px 30px;
-
-      text-align: center;
+    section {
+      padding: 90px 0;
     }
 
-    .intro h2 {
-      font-family: Georgia, serif;
-      font-size: clamp(40px, 6vw, 70px);
-      font-weight: 400;
-      line-height: 1;
-      letter-spacing: -3px;
-
-      margin-bottom: 25px;
-    }
-
-    .intro p {
-      max-width: 680px;
-      margin: auto;
-
-      color: var(--gray);
-
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    /* SECTION */
-
-    .section {
-      max-width: 1450px;
-
-      margin: auto;
-      padding: 0 35px 110px;
-    }
-
-    .section-header {
+    .section-heading {
       display: flex;
-      align-items: end;
+      align-items: flex-end;
       justify-content: space-between;
-
       gap: 30px;
-
       margin-bottom: 35px;
     }
 
-    .section-header h2 {
-      font-family: Georgia, serif;
-      font-size: 43px;
+    .section-heading h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(36px, 4vw, 52px);
       font-weight: 400;
-      letter-spacing: -1.5px;
+      line-height: 1;
     }
 
-    .section-header p {
+    .section-heading p {
+      max-width: 500px;
       color: var(--gray);
-      font-size: 12px;
-      margin-top: 7px;
+      font-size: 14px;
     }
 
-    .section-link {
-      font-size: 10px;
+    .text-link {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .1em;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      border-bottom: 1px solid #111;
+      padding-bottom: 4px;
       white-space: nowrap;
     }
 
-    .section-link:hover {
-      text-decoration: underline;
-    }
+    /* =========================
+       CATEGORIES
+    ========================= */
 
-    /* CATEGORY GRID */
+    .categories {
+      background: var(--cream);
+    }
 
     .category-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      grid-template-rows: 290px 290px;
-      gap: 12px;
-    }
-
-    .category-card {
-      position: relative;
-      overflow: hidden;
-      background: #eee;
-    }
-
-    .category-card:first-child {
-      grid-row: 1 / 3;
-    }
-
-    .category-card img {
-      height: 100%;
-      object-fit: cover;
-
-      transition: transform .7s;
-    }
-
-    .category-card:hover img {
-      transform: scale(1.045);
-    }
-
-    .category-overlay {
-      position: absolute;
-      inset: 0;
-
-      display: flex;
-      align-items: flex-end;
-
-      padding: 28px;
-
-      background:
-        linear-gradient(
-          to top,
-          rgba(0,0,0,.62),
-          transparent 65%
-        );
-
-      color: white;
-    }
-
-    .category-overlay h3 {
-      font-family: Georgia, serif;
-      font-size: 32px;
-      font-weight: 400;
-    }
-
-    .category-overlay span {
-      display: block;
-
-      margin-top: 7px;
-
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      opacity: .8;
-    }
-
-    /* PRODUCT STRIP */
-
-    .product-section {
-      background: var(--soft);
-      padding: 100px 0 110px;
-    }
-
-    .product-grid {
-      max-width: 1450px;
-
-      margin: auto;
-      padding: 0 35px;
-
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 18px;
     }
 
-    .product-card {
-      background: white;
+    .category-card {
+      height: 460px;
+      position: relative;
       overflow: hidden;
+      background: #ddd;
+    }
+
+    .category-card img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+
+    .category-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .category-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
+      color: white;
+      background:
+        linear-gradient(
+          transparent 35%,
+          rgba(0,0,0,.72)
+        );
+    }
+
+    .category-overlay h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+      font-weight: 400;
+      margin-bottom: 7px;
+    }
+
+    .category-overlay span {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       PRODUCTS
+    ========================= */
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .product-card {
+      min-width: 0;
     }
 
     .product-image {
       position: relative;
-      aspect-ratio: 4 / 5;
+      aspect-ratio: 3 / 4;
       overflow: hidden;
+      background: var(--soft);
     }
 
     .product-image img {
       height: 100%;
       object-fit: cover;
-
-      transition: transform .6s;
+      transition: transform .45s ease;
     }
 
     .product-card:hover .product-image img {
-      transform: scale(1.05);
+      transform: scale(1.04);
     }
 
-    .product-badge {
+    .badge {
       position: absolute;
-      top: 13px;
-      left: 13px;
-
-      background: white;
+      top: 14px;
+      left: 14px;
+      z-index: 2;
+      background: #fff;
       padding: 7px 10px;
-
-      font-size: 8px;
-      font-weight: bold;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: .08em;
       text-transform: uppercase;
-      letter-spacing: 1px;
     }
 
-    .product-content {
-      padding: 17px;
+    .product-info {
+      padding: 17px 2px;
     }
 
     .product-category {
-      color: #999;
-
-      font-size: 9px;
+      color: #888;
+      font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-
+      letter-spacing: .1em;
       margin-bottom: 7px;
     }
 
-    .product-content h3 {
-      font-family: Georgia, serif;
-      font-size: 20px;
-      font-weight: 400;
-
+    .product-name {
+      font-size: 15px;
+      font-weight: 700;
       margin-bottom: 8px;
     }
 
-    .product-content p {
+    .product-description {
       color: var(--gray);
-
-      font-size: 11px;
-      line-height: 1.6;
-
-      margin-bottom: 14px;
+      font-size: 13px;
+      margin-bottom: 12px;
     }
 
-    .product-link {
-      font-size: 9px;
-      font-weight: bold;
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .price {
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .view-deal {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .08em;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      border-bottom: 1px solid #111;
+      padding-bottom: 3px;
     }
 
-    .product-link:hover {
-      text-decoration: underline;
-    }
-
-    /* EDITORIAL */
+    /* =========================
+       EDITORIAL
+    ========================= */
 
     .editorial {
-      max-width: 1450px;
+      padding-top: 0;
+    }
 
-      margin: auto;
-      padding: 110px 35px;
-
+    .editorial-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-
-      gap: 70px;
-      align-items: center;
+      grid-template-columns: 1.15fr .85fr;
+      min-height: 620px;
     }
 
     .editorial-image {
@@ -514,234 +461,183 @@
     }
 
     .editorial-image img {
-      aspect-ratio: 4 / 5;
+      height: 100%;
+      min-height: 620px;
       object-fit: cover;
     }
 
-    .editorial-copy .eyebrow {
-      color: #999;
+    .editorial-content {
+      background: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 70px;
     }
 
-    .editorial-copy h2 {
-      font-family: Georgia, serif;
-
-      font-size: clamp(42px, 5vw, 65px);
+    .editorial-content h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(40px, 5vw, 68px);
       font-weight: 400;
-
-      line-height: .98;
-      letter-spacing: -3px;
-
+      line-height: 1;
       margin-bottom: 25px;
     }
 
-    .editorial-copy p {
-      max-width: 530px;
-
-      color: var(--gray);
-
-      font-size: 14px;
-      line-height: 1.9;
-
-      margin-bottom: 30px;
+    .editorial-content p {
+      max-width: 470px;
+      color: #bbb;
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 32px;
     }
 
-    /* TRENDING */
+    /* =========================
+       WHY VEYRA
+    ========================= */
 
-    .trending {
-      background: var(--black);
-      color: white;
-
-      padding: 105px 0;
+    .features {
+      background: var(--cream);
     }
 
-    .trending .section-header {
-      max-width: 1450px;
-      margin: auto;
-      padding: 0 35px 35px;
-    }
-
-    .trending .section-header p {
-      color: #999;
-    }
-
-    .trending-grid {
-      max-width: 1450px;
-
-      margin: auto;
-      padding: 0 35px;
-
+    .feature-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+      border: 1px solid var(--border);
+      gap: 1px;
+      background: var(--border);
     }
 
-    .trend-card {
-      position: relative;
-      min-height: 500px;
-      overflow: hidden;
-    }
-
-    .trend-card img {
-      height: 100%;
-      object-fit: cover;
-
-      transition: transform .7s;
-    }
-
-    .trend-card:hover img {
-      transform: scale(1.05);
-    }
-
-    .trend-overlay {
-      position: absolute;
-      inset: 0;
-
-      padding: 30px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-
-      background:
-        linear-gradient(
-          to top,
-          rgba(0,0,0,.7),
-          transparent 65%
-        );
-    }
-
-    .trend-overlay small {
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-    }
-
-    .trend-overlay h3 {
-      font-family: Georgia, serif;
-      font-size: 34px;
-      font-weight: 400;
-    }
-
-    /* VALUES */
-
-    .values {
-      max-width: 1100px;
-
-      margin: auto;
-      padding: 110px 30px;
-
+    .feature {
+      background: var(--cream);
       text-align: center;
+      padding: 48px 35px;
     }
 
-    .values h2 {
-      font-family: Georgia, serif;
-      font-size: 52px;
-      font-weight: 400;
-
-      margin-bottom: 60px;
-    }
-
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 50px;
-    }
-
-    .value h3 {
-      font-family: Georgia, serif;
-      font-size: 24px;
-      font-weight: 400;
-
+    .feature-number {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
       margin-bottom: 12px;
     }
 
-    .value p {
-      color: var(--gray);
-      font-size: 12px;
-      line-height: 1.8;
+    .feature h3 {
+      font-size: 15px;
+      margin-bottom: 10px;
     }
 
-    /* NEWSLETTER */
+    .feature p {
+      color: var(--gray);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       NEWSLETTER
+    ========================= */
 
     .newsletter {
-      background: var(--cream);
-      padding: 100px 30px;
-
+      color: white;
       text-align: center;
+
+      background:
+        linear-gradient(
+          rgba(0,0,0,.58),
+          rgba(0,0,0,.58)
+        ),
+        url("https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=2000&q=90")
+        center/cover no-repeat;
+    }
+
+    .newsletter-inner {
+      max-width: 700px;
+      margin: auto;
     }
 
     .newsletter h2 {
-      font-family: Georgia, serif;
-      font-size: clamp(42px, 6vw, 70px);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(40px, 5vw, 64px);
       font-weight: 400;
-
+      line-height: 1;
       margin-bottom: 20px;
     }
 
     .newsletter p {
-      max-width: 550px;
+      color: rgba(255,255,255,.85);
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+
+    .newsletter-form {
+      max-width: 520px;
       margin: auto;
+      display: flex;
+    }
 
-      color: var(--gray);
+    .newsletter-form input {
+      flex: 1;
+      min-width: 0;
+      height: 52px;
+      border: 0;
+      padding: 0 18px;
+      outline: none;
+    }
 
+    .newsletter-form button {
+      height: 52px;
+      padding: 0 22px;
+      border: 1px solid white;
+      background: white;
+      color: #111;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #111;
+      color: white;
+      padding: 70px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 55px;
+      border-bottom: 1px solid #333;
+    }
+
+    .footer-brand h2 {
+      font-size: 28px;
+      letter-spacing: .2em;
+      margin-bottom: 18px;
+    }
+
+    .footer-brand p {
+      max-width: 340px;
+      color: #aaa;
       font-size: 13px;
       line-height: 1.8;
     }
 
-    /* FOOTER */
-
-    footer {
-      background: #0b0b0b;
-      color: #999;
-
-      padding: 70px 35px 25px;
-    }
-
-    .footer-grid {
-      max-width: 1450px;
-
-      margin: auto;
-      padding-bottom: 55px;
-
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-
-      gap: 50px;
-    }
-
-    .footer-logo {
-      color: white;
-
-      font-size: 26px;
-      font-weight: 900;
-      letter-spacing: 7px;
-
-      margin-bottom: 18px;
-    }
-
-    .footer-about {
-      max-width: 370px;
-
+    .footer-column h3 {
       font-size: 12px;
-      line-height: 1.9;
-    }
-
-    .footer-column h4 {
-      color: white;
-
-      font-size: 9px;
       text-transform: uppercase;
-      letter-spacing: 2px;
-
-      margin-bottom: 20px;
+      letter-spacing: .12em;
+      margin-bottom: 18px;
     }
 
     .footer-column a {
       display: block;
-
-      font-size: 11px;
-      margin-bottom: 13px;
+      color: #aaa;
+      font-size: 13px;
+      margin-bottom: 11px;
+      transition: color .2s ease;
     }
 
     .footer-column a:hover {
@@ -749,186 +645,308 @@
     }
 
     .footer-bottom {
-      max-width: 1450px;
-
-      margin: auto;
-      padding-top: 22px;
-
-      border-top: 1px solid #242424;
-
       display: flex;
+      align-items: center;
       justify-content: space-between;
-
-      font-size: 9px;
+      gap: 20px;
+      padding-top: 24px;
+      color: #888;
+      font-size: 11px;
     }
 
-    /* MOBILE */
+    .footer-bottom-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    .mobile-menu-button {
+      display: none;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
 
     @media (max-width: 1050px) {
 
-      .nav-links {
-        gap: 15px;
-      }
-
-      .search {
-        display: none;
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .product-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .category-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 350px 350px 350px;
-      }
-
-      .category-card:first-child {
-        grid-column: 1 / 3;
-        grid-row: auto;
-      }
-    }
-
-    @media (max-width: 750px) {
-
-      .nav {
-        padding: 0 18px;
-      }
-
-      .nav-links a:nth-child(4),
-      .nav-links a:nth-child(5),
-      .nav-links a:nth-child(6) {
-        display: none;
-      }
-
-      .hero {
-        min-height: 600px;
-      }
-
-      .hero-content {
-        padding: 70px 20px;
-      }
-
-      .section,
-      .product-grid,
-      .editorial,
-      .trending-grid {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-
-      .category-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, 320px);
-      }
-
-      .category-card:first-child {
-        grid-column: auto;
-      }
-
-      .editorial {
-        grid-template-columns: 1fr;
-        gap: 45px;
-      }
-
-      .trending-grid {
+      .editorial-grid {
         grid-template-columns: 1fr;
       }
 
-      .trend-card {
-        min-height: 450px;
+      .editorial-image img {
+        min-height: 500px;
       }
 
-      .values-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+      .editorial-content {
+        min-height: 480px;
       }
 
       .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .footer-grid > div:first-child {
-        grid-column: 1 / -1;
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 520px) {
+    @media (max-width: 760px) {
 
-      .logo {
-        font-size: 21px;
+      .announcement {
+        font-size: 9px;
       }
 
-      .nav-links {
-        font-size: 8px;
+      .header-main {
+        min-height: 68px;
+        grid-template-columns: auto 1fr auto;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      .main-nav {
+        display: none;
+      }
+
+      .mobile-menu-button {
+        display: grid;
+      }
+
+      .header-actions {
+        gap: 0;
+      }
+
+      .hero {
+        min-height: 620px;
+        background:
+          linear-gradient(
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.55)
+          ),
+          url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=85")
+          center/cover no-repeat;
+      }
+
+      .hero-content {
+        padding: 70px 0;
       }
 
       .hero h1 {
-        letter-spacing: -3px;
+        font-size: 54px;
       }
 
-      .product-grid {
-        grid-template-columns: 1fr;
+      section {
+        padding: 65px 0;
       }
 
-      .section-header {
+      .section-heading {
         align-items: flex-start;
         flex-direction: column;
       }
 
-      .footer-grid {
+      .category-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .category-card {
+        height: 330px;
+      }
+
+      .category-overlay {
+        padding: 18px;
+      }
+
+      .category-overlay h3 {
+        font-size: 24px;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px 12px;
+      }
+
+      .product-description {
+        display: none;
+      }
+
+      .editorial-content {
+        padding: 50px 30px;
+      }
+
+      .feature-grid {
         grid-template-columns: 1fr;
       }
 
-      .footer-grid > div:first-child {
-        grid-column: auto;
+      .newsletter-form {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .newsletter-form input,
+      .newsletter-form button {
+        width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 20px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
       }
 
       .footer-bottom {
         flex-direction: column;
-        gap: 10px;
+        align-items: flex-start;
       }
     }
+
+    @media (max-width: 480px) {
+
+      .container {
+        width: 90%;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-card {
+        height: 390px;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .product-name {
+        font-size: 13px;
+      }
+
+      .price {
+        font-size: 13px;
+      }
+
+      .view-deal {
+        font-size: 8px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .footer-bottom-links {
+        flex-wrap: wrap;
+      }
+    }
+
   </style>
 </head>
 
 <body>
 
-  <!-- TOP BAR -->
+  <!-- =========================
+       ANNOUNCEMENT
+  ========================== -->
 
-  <div class="topbar">
-    Fashion discoveries curated for modern style
+  <div class="announcement">
+    Discover the latest fashion &amp; trending styles
   </div>
 
-  <!-- HEADER -->
+
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header>
 
-    <div class="nav">
+    <div class="container header-main">
 
       <a href="index.html" class="logo">
         VEYRA
       </a>
 
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="categories.html">Women</a>
-        <a href="categories.html">Men</a>
-        <a href="categories.html">Shoes</a>
-        <a href="categories.html">Bags</a>
-        <a href="products.html">Discover</a>
+      <nav class="main-nav">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="categories.html">
+          Categories
+        </a>
+
+        <a href="products.html">
+          Products
+        </a>
+
+        <a href="#trending">
+          Trending
+        </a>
+
+        <a href="#about">
+          About
+        </a>
+
       </nav>
 
-      <div class="nav-actions">
+      <div class="header-actions">
 
-        <div class="search">
-          <input
-            type="search"
-            placeholder="Search fashion..."
-            aria-label="Search fashion"
-            onkeydown="handleSearch(event)"
-          >
-        </div>
+        <button
+          class="icon-button"
+          aria-label="Search"
+          onclick="document.getElementById('searchBox').focus()"
+        >
+          <svg class="icon" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m20 20-4-4"></path>
+          </svg>
+        </button>
+
+        <button
+          class="icon-button"
+          aria-label="Favorites"
+          onclick="alert('Your favorites feature is coming soon.')"
+        >
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M20.8 8.8c0 5.5-8.8 10.3-8.8 10.3S3.2 14.3 3.2 8.8A4.7 4.7 0 0 1 12 6.1a4.7 4.7 0 0 1 8.8 2.7Z"></path>
+          </svg>
+        </button>
+
+        <button
+          class="icon-button mobile-menu-button"
+          aria-label="Menu"
+          onclick="toggleMenu()"
+        >
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
 
       </div>
 
@@ -936,558 +954,596 @@
 
   </header>
 
-  <main>
 
-    <!-- HERO -->
+  <!-- =========================
+       MOBILE NAV
+  ========================== -->
+
+  <div
+    id="mobileMenu"
+    style="
+      display:none;
+      background:#fff;
+      border-bottom:1px solid #ddd;
+      padding:20px;
+      position:sticky;
+      top:68px;
+      z-index:999;
+    "
+  >
+
+    <a href="index.html" style="display:block;padding:12px 0;">
+      Home
+    </a>
+
+    <a href="categories.html" style="display:block;padding:12px 0;">
+      Categories
+    </a>
+
+    <a href="products.html" style="display:block;padding:12px 0;">
+      Products
+    </a>
+
+    <a href="#trending" style="display:block;padding:12px 0;">
+      Trending
+    </a>
+
+    <a href="#about" style="display:block;padding:12px 0;">
+      About
+    </a>
+
+  </div>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main>
 
     <section class="hero">
 
-      <div class="hero-content">
+      <div class="container">
 
-        <div class="eyebrow">
-          Veyra / Fashion Discovery
-        </div>
+        <div class="hero-content">
 
-        <h1>
-          Fashion<br>
-          worth finding.
-        </h1>
+          <div class="eyebrow">
+            Veyra Fashion Edit
+          </div>
 
-        <p>
-          Discover clothing, footwear, accessories and emerging styles
-          from across the web — curated in one destination for people
-          who love fashion.
-        </p>
-
-        <div class="hero-buttons">
-
-          <a class="button" href="products.html">
-            Explore products
-          </a>
-
-          <a class="button dark" href="categories.html">
-            Browse categories
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- INTRO -->
-
-    <section class="intro">
-
-      <div class="eyebrow">
-        The Veyra Edit
-      </div>
-
-      <h2>
-        Less searching.<br>
-        More discovering.
-      </h2>
-
-      <p>
-        Fashion moves quickly. Veyra brings together interesting
-        pieces, useful categories and curated collections so you can
-        discover your next favorite look without searching everywhere.
-      </p>
-
-    </section>
-
-    <!-- SHOP BY CATEGORY -->
-
-    <section class="section">
-
-      <div class="section-header">
-
-        <div>
-          <h2>Shop by category</h2>
+          <h1>
+            Find your next favorite look.
+          </h1>
 
           <p>
-            Explore the styles that define your wardrobe.
+            Discover fashion worth knowing about. Explore curated
+            clothing, shoes, accessories and emerging trends from
+            across the web — all in one place.
           </p>
+
+          <a
+            href="products.html"
+            class="button button-light"
+          >
+            Explore Products
+          </a>
+
         </div>
-
-        <a class="section-link" href="categories.html">
-          View all categories →
-        </a>
-
-      </div>
-
-      <div class="category-grid">
-
-        <a class="category-card" href="categories.html">
-
-          <img
-            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1300&q=90"
-            alt="Women's fashion"
-          >
-
-          <div class="category-overlay">
-
-            <div>
-              <h3>Women</h3>
-              <span>Explore women's fashion</span>
-            </div>
-
-          </div>
-
-        </a>
-
-        <a class="category-card" href="categories.html">
-
-          <img
-            src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=900&q=90"
-            alt="Men's fashion"
-          >
-
-          <div class="category-overlay">
-
-            <div>
-              <h3>Men</h3>
-              <span>Modern men's style</span>
-            </div>
-
-          </div>
-
-        </a>
-
-        <a class="category-card" href="categories.html">
-
-          <img
-            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=90"
-            alt="Fashion shoes"
-          >
-
-          <div class="category-overlay">
-
-            <div>
-              <h3>Shoes</h3>
-              <span>Step into something new</span>
-            </div>
-
-          </div>
-
-        </a>
-
-        <a class="category-card" href="categories.html">
-
-          <img
-            src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=90"
-            alt="Fashion bags"
-          >
-
-          <div class="category-overlay">
-
-            <div>
-              <h3>Bags</h3>
-              <span>Everyday accessories</span>
-            </div>
-
-          </div>
-
-        </a>
-
-        <a class="category-card" href="categories.html">
-
-          <img
-            src="https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?auto=format&fit=crop&w=900&q=90"
-            alt="Fashion accessories"
-          >
-
-          <div class="category-overlay">
-
-            <div>
-              <h3>Accessories</h3>
-              <span>Complete the look</span>
-            </div>
-
-          </div>
-
-        </a>
 
       </div>
 
     </section>
 
-    <!-- FEATURED PRODUCTS -->
 
-    <section class="product-section">
+    <!-- =========================
+         SEARCH
+    ========================== -->
 
-      <div class="section">
+    <section style="padding:35px 0 0;">
 
-        <div class="section-header">
+      <div class="container">
+
+        <div
+          style="
+            display:flex;
+            max-width:700px;
+            margin:auto;
+            border:1px solid #ddd;
+            background:#fff;
+          "
+        >
+
+          <input
+            id="searchBox"
+            type="search"
+            placeholder="Search fashion, shoes, bags..."
+            aria-label="Search fashion"
+            style="
+              flex:1;
+              min-width:0;
+              border:0;
+              outline:0;
+              padding:16px 18px;
+              font-size:14px;
+            "
+          >
+
+          <button
+            onclick="performSearch()"
+            style="
+              border:0;
+              background:#111;
+              color:#fff;
+              padding:0 24px;
+              cursor:pointer;
+              font-size:11px;
+              font-weight:800;
+              letter-spacing:.08em;
+              text-transform:uppercase;
+            "
+          >
+            Search
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CATEGORIES
+    ========================== -->
+
+    <section class="categories">
+
+      <div class="container">
+
+        <div class="section-heading">
 
           <div>
-            <h2>Trending discoveries</h2>
+            <div class="eyebrow">
+              Explore
+            </div>
 
-            <p>
-              A selection of products currently catching our attention.
-            </p>
+            <h2>
+              Shop by category
+            </h2>
           </div>
 
-          <a class="section-link" href="products.html">
-            Shop all products →
+          <a
+            href="categories.html"
+            class="text-link"
+          >
+            View all categories
+          </a>
+
+        </div>
+
+
+        <div class="category-grid">
+
+          <a
+            href="categories.html"
+            class="category-card"
+          >
+
+            <img
+              src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1000&q=85"
+              alt="Women's fashion"
+              loading="lazy"
+            >
+
+            <div class="category-overlay">
+
+              <h3>
+                Women
+              </h3>
+
+              <span>
+                Explore styles
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <a
+            href="categories.html"
+            class="category-card"
+          >
+
+            <img
+              src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=85"
+              alt="Fashion clothing"
+              loading="lazy"
+            >
+
+            <div class="category-overlay">
+
+              <h3>
+                Clothing
+              </h3>
+
+              <span>
+                New arrivals
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <a
+            href="categories.html"
+            class="category-card"
+          >
+
+            <img
+              src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85"
+              alt="Fashion sneakers"
+              loading="lazy"
+            >
+
+            <div class="category-overlay">
+
+              <h3>
+                Shoes
+              </h3>
+
+              <span>
+                Step into style
+              </span>
+
+            </div>
+
+          </a>
+
+
+          <a
+            href="categories.html"
+            class="category-card"
+          >
+
+            <img
+              src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=85"
+              alt="Fashion accessories"
+              loading="lazy"
+            >
+
+            <div class="category-overlay">
+
+              <h3>
+                Accessories
+              </h3>
+
+              <span>
+                Complete the look
+              </span>
+
+            </div>
+
           </a>
 
         </div>
 
       </div>
 
-      <div class="product-grid">
+    </section>
 
-        <article class="product-card">
 
-          <a href="product.html">
+    <!-- =========================
+         TRENDING PRODUCTS
+    ========================== -->
 
-            <div class="product-image">
+    <section id="trending">
 
-              <span class="product-badge">
-                Trending
-              </span>
+      <div class="container">
 
-              <img
-                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=90"
-                alt="Classic white sneakers"
-                loading="lazy"
-              >
+        <div class="section-heading">
 
+          <div>
+
+            <div class="eyebrow">
+              The Veyra Edit
             </div>
 
-            <div class="product-content">
+            <h2>
+              Trending now
+            </h2>
 
-              <div class="product-category">
-                Footwear
+          </div>
+
+          <a
+            href="products.html"
+            class="text-link"
+          >
+            Shop all products
+          </a>
+
+        </div>
+
+
+        <div class="product-grid">
+
+
+          <!-- PRODUCT 1 -->
+
+          <article class="product-card">
+
+            <a href="product.html">
+
+              <div class="product-image">
+
+                <span class="badge">
+                  Trending
+                </span>
+
+                <img
+                  src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85"
+                  alt="Classic white sneakers"
+                  loading="lazy"
+                >
+
               </div>
 
-              <h3>
+            </a>
+
+            <div class="product-info">
+
+              <div class="product-category">
+                Shoes
+              </div>
+
+              <div class="product-name">
                 Classic White Sneakers
-              </h3>
-
-              <p>
-                A versatile everyday pair with a clean silhouette.
-              </p>
-
-              <span class="product-link">
-                Discover product →
-              </span>
-
-            </div>
-
-          </a>
-
-        </article>
-
-        <article class="product-card">
-
-          <a href="product.html">
-
-            <div class="product-image">
-
-              <span class="product-badge">
-                Editor's pick
-              </span>
-
-              <img
-                src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=90"
-                alt="Leather shoulder bag"
-                loading="lazy"
-              >
-
-            </div>
-
-            <div class="product-content">
-
-              <div class="product-category">
-                Bags
               </div>
 
-              <h3>
+              <div class="product-description">
+                Clean, versatile everyday sneakers.
+              </div>
+
+              <div class="product-bottom">
+
+                <span class="price">
+                  $49.99
+                </span>
+
+                <a
+                  href="product.html"
+                  class="view-deal"
+                >
+                  View deal
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PRODUCT 2 -->
+
+          <article class="product-card">
+
+            <a href="product.html">
+
+              <div class="product-image">
+
+                <span class="badge">
+                  Featured
+                </span>
+
+                <img
+                  src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=85"
+                  alt="Leather shoulder bag"
+                  loading="lazy"
+                >
+
+              </div>
+
+            </a>
+
+            <div class="product-info">
+
+              <div class="product-category">
+                Accessories
+              </div>
+
+              <div class="product-name">
                 Leather Shoulder Bag
-              </h3>
-
-              <p>
-                A timeless accessory for everyday styling.
-              </p>
-
-              <span class="product-link">
-                Discover product →
-              </span>
-
-            </div>
-
-          </a>
-
-        </article>
-
-        <article class="product-card">
-
-          <a href="product.html">
-
-            <div class="product-image">
-
-              <span class="product-badge">
-                New
-              </span>
-
-              <img
-                src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=90"
-                alt="Classic leather jacket"
-                loading="lazy"
-              >
-
-            </div>
-
-            <div class="product-content">
-
-              <div class="product-category">
-                Men's fashion
               </div>
 
-              <h3>
-                Classic Leather Jacket
-              </h3>
-
-              <p>
-                A timeless outer layer with modern appeal.
-              </p>
-
-              <span class="product-link">
-                Discover product →
-              </span>
-
-            </div>
-
-          </a>
-
-        </article>
-
-        <article class="product-card">
-
-          <a href="product.html">
-
-            <div class="product-image">
-
-              <span class="product-badge">
-                Featured
-              </span>
-
-              <img
-                src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=90"
-                alt="Modern women's outfit"
-                loading="lazy"
-              >
-
-            </div>
-
-            <div class="product-content">
-
-              <div class="product-category">
-                Women's fashion
+              <div class="product-description">
+                An elegant everyday accessory.
               </div>
 
-              <h3>
-                Modern Fashion Outfit
-              </h3>
+              <div class="product-bottom">
 
-              <p>
-                Contemporary pieces for an effortless look.
-              </p>
+                <span class="price">
+                  $69.99
+                </span>
 
-              <span class="product-link">
-                Discover product →
-              </span>
+                <a
+                  href="product.html"
+                  class="view-deal"
+                >
+                  View deal
+                </a>
+
+              </div>
 
             </div>
 
-          </a>
+          </article>
 
-        </article>
+
+          <!-- PRODUCT 3 -->
+
+          <article class="product-card">
+
+            <a href="product.html">
+
+              <div class="product-image">
+
+                <span class="badge">
+                  New
+                </span>
+
+                <img
+                  src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=1000&q=85"
+                  alt="Classic fashion jacket"
+                  loading="lazy"
+                >
+
+              </div>
+
+            </a>
+
+            <div class="product-info">
+
+              <div class="product-category">
+                Outerwear
+              </div>
+
+              <div class="product-name">
+                Classic Jacket
+              </div>
+
+              <div class="product-description">
+                A timeless layer for everyday looks.
+              </div>
+
+              <div class="product-bottom">
+
+                <span class="price">
+                  $89.99
+                </span>
+
+                <a
+                  href="product.html"
+                  class="view-deal"
+                >
+                  View deal
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PRODUCT 4 -->
+
+          <article class="product-card">
+
+            <a href="product.html">
+
+              <div class="product-image">
+
+                <span class="badge">
+                  Popular
+                </span>
+
+                <img
+                  src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=85"
+                  alt="Modern fashion outfit"
+                  loading="lazy"
+                >
+
+              </div>
+
+            </a>
+
+            <div class="product-info">
+
+              <div class="product-category">
+                Clothing
+              </div>
+
+              <div class="product-name">
+                Modern Fashion Look
+              </div>
+
+              <div class="product-description">
+                Contemporary style for every occasion.
+              </div>
+
+              <div class="product-bottom">
+
+                <span class="price">
+                  $74.99
+                </span>
+
+                <a
+                  href="product.html"
+                  class="view-deal"
+                >
+                  View deal
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
 
       </div>
 
     </section>
 
-    <!-- EDITORIAL -->
+
+    <!-- =========================
+         EDITORIAL
+    ========================== -->
 
     <section class="editorial">
 
-      <div class="editorial-image">
+      <div class="container">
 
-        <img
-          src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1200&q=90"
-          alt="Fashion editorial"
-          loading="lazy"
-        >
+        <div class="editorial-grid">
 
-      </div>
+          <div class="editorial-image">
 
-      <div class="editorial-copy">
-
-        <div class="eyebrow">
-          The Veyra Journal
-        </div>
-
-        <h2>
-          Style is<br>
-          personal.
-        </h2>
-
-        <p>
-          We believe discovering fashion should feel inspiring rather
-          than overwhelming. Veyra explores styles, categories and
-          products from across the fashion landscape to help you find
-          pieces that fit your own way of dressing.
-        </p>
-
-        <a class="button dark" href="categories.html">
-          Explore the edit
-        </a>
-
-      </div>
-
-    </section>
-
-    <!-- TRENDING COLLECTIONS -->
-
-    <section class="trending">
-
-      <div class="section-header">
-
-        <div>
-          <h2>Explore the mood</h2>
-
-          <p>
-            Collections built around the way you want to dress.
-          </p>
-        </div>
-
-      </div>
-
-      <div class="trending-grid">
-
-        <a class="trend-card" href="products.html">
-
-          <img
-            src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=1200&q=90"
-            alt="Everyday essentials"
-            loading="lazy"
-          >
-
-          <div class="trend-overlay">
-
-            <small>
-              Collection 01
-            </small>
-
-            <h3>
-              Everyday Essentials
-            </h3>
+            <img
+              src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1600&q=90"
+              alt="Modern fashion editorial"
+              loading="lazy"
+            >
 
           </div>
 
-        </a>
+          <div class="editorial-content">
 
-        <a class="trend-card" href="products.html">
+            <div class="eyebrow">
+              Veyra Journal
+            </div>
 
-          <img
-            src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=90"
-            alt="New season style"
-            loading="lazy"
-          >
+            <h2>
+              Style is personal.
+            </h2>
 
-          <div class="trend-overlay">
+            <p>
+              Fashion is more than following a trend. It's about
+              finding pieces that fit your personality, your lifestyle
+              and the way you want to feel. Veyra brings together
+              inspiration and products to help you discover your style.
+            </p>
 
-            <small>
-              Collection 02
-            </small>
-
-            <h3>
-              New Season
-            </h3>
-
-          </div>
-
-        </a>
-
-        <a class="trend-card" href="products.html">
-
-          <img
-            src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1200&q=90"
-            alt="Minimal style"
-            loading="lazy"
-          >
-
-          <div class="trend-overlay">
-
-            <small>
-              Collection 03
-            </small>
-
-            <h3>
-              Modern Minimal
-            </h3>
+            <a
+              href="categories.html"
+              class="button button-light"
+            >
+              Explore the collection
+            </a>
 
           </div>
-
-        </a>
-
-      </div>
-
-    </section>
-
-    <!-- WHY VEYRA -->
-
-    <section class="values">
-
-      <div class="eyebrow">
-        Why Veyra
-      </div>
-
-      <h2>
-        Discover differently.
-      </h2>
-
-      <div class="values-grid">
-
-        <div class="value">
-
-          <h3>
-            Curated
-          </h3>
-
-          <p>
-            We organize fashion discoveries into useful categories
-            and collections so finding something interesting feels simple.
-          </p>
-
-        </div>
-
-        <div class="value">
-
-          <h3>
-            Diverse
-          </h3>
-
-          <p>
-            Explore different styles, products and fashion directions
-            from across the wider online shopping landscape.
-          </p>
-
-        </div>
-
-        <div class="value">
-
-          <h3>
-            Always evolving
-          </h3>
-
-          <p>
-            Veyra is designed to grow with new discoveries, trends,
-            categories and partner products.
-          </p>
 
         </div>
 
@@ -1495,115 +1551,345 @@
 
     </section>
 
-    <!-- NEWSLETTER -->
+
+    <!-- =========================
+         WHY VEYRA
+    ========================== -->
+
+    <section
+      id="about"
+      class="features"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+
+            <div class="eyebrow">
+              Why Veyra
+            </div>
+
+            <h2>
+              Fashion discovery, simplified.
+            </h2>
+
+          </div>
+
+          <p>
+            We make it easier to discover interesting products and
+            fashion inspiration without searching everywhere.
+          </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+          <div class="feature">
+
+            <div class="feature-number">
+              01
+            </div>
+
+            <h3>
+              Curated discovery
+            </h3>
+
+            <p>
+              We organize interesting fashion finds into simple,
+              easy-to-explore collections.
+            </p>
+
+          </div>
+
+
+          <div class="feature">
+
+            <div class="feature-number">
+              02
+            </div>
+
+            <h3>
+              Explore more
+            </h3>
+
+            <p>
+              Discover styles, categories and products from across
+              the web in one convenient place.
+            </p>
+
+          </div>
+
+
+          <div class="feature">
+
+            <div class="feature-number">
+              03
+            </div>
+
+            <h3>
+              Built for inspiration
+            </h3>
+
+            <p>
+              From everyday essentials to standout pieces,
+              Veyra is designed to help you find your next look.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         NEWSLETTER
+    ========================== -->
 
     <section class="newsletter">
 
-      <div class="eyebrow">
-        Veyra
+      <div class="container">
+
+        <div class="newsletter-inner">
+
+          <div class="eyebrow">
+            Stay in the loop
+          </div>
+
+          <h2>
+            Get the Veyra edit.
+          </h2>
+
+          <p>
+            Discover new styles, fashion inspiration and product
+            picks delivered to your inbox.
+          </p>
+
+          <form
+            class="newsletter-form"
+            onsubmit="subscribe(event)"
+          >
+
+            <input
+              type="email"
+              id="email"
+              placeholder="Your email address"
+              aria-label="Email address"
+              required
+            >
+
+            <button type="submit">
+              Subscribe
+            </button>
+
+          </form>
+
+        </div>
+
       </div>
-
-      <h2>
-        Find what<br>
-        feels like you.
-      </h2>
-
-      <p>
-        Fashion discovery for people who want to explore beyond
-        the obvious.
-      </p>
-
-      <br>
-
-      <a class="button dark" href="products.html">
-        Start discovering →
-      </a>
 
     </section>
 
   </main>
 
-  <!-- FOOTER -->
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
 
-    <div class="footer-grid">
+    <div class="container">
 
-      <div>
+      <div class="footer-grid">
 
-        <div class="footer-logo">
-          VEYRA
+        <div class="footer-brand">
+
+          <h2>
+            VEYRA
+          </h2>
+
+          <p>
+            A modern fashion discovery platform helping you discover
+            clothing, shoes, accessories and trends from across the web.
+          </p>
+
         </div>
 
-        <p class="footer-about">
-          Veyra is a fashion discovery platform helping people discover
-          clothing, footwear, accessories and style from across the web.
-          Our goal is simple: make finding your next favorite piece easier.
-        </p>
+
+        <div class="footer-column">
+
+          <h3>
+            Discover
+          </h3>
+
+          <a href="products.html">
+            Products
+          </a>
+
+          <a href="categories.html">
+            Categories
+          </a>
+
+          <a href="#trending">
+            Trending
+          </a>
+
+          <a href="#about">
+            About Veyra
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>
+            Categories
+          </h3>
+
+          <a href="categories.html">
+            Women
+          </a>
+
+          <a href="categories.html">
+            Clothing
+          </a>
+
+          <a href="categories.html">
+            Shoes
+          </a>
+
+          <a href="categories.html">
+            Accessories
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>
+            Information
+          </h3>
+
+          <a href="#">
+            About Us
+          </a>
+
+          <a href="#">
+            Contact
+          </a>
+
+          <a href="#">
+            Privacy Policy
+          </a>
+
+          <a href="#">
+            Terms of Use
+          </a>
+
+        </div>
 
       </div>
 
-      <div class="footer-column">
 
-        <h4>Discover</h4>
+      <div class="footer-bottom">
 
-        <a href="index.html">Home</a>
-        <a href="categories.html">Categories</a>
-        <a href="products.html">Products</a>
+        <div>
+          © 2026 Veyra. All rights reserved.
+        </div>
 
-      </div>
+        <div class="footer-bottom-links">
 
-      <div class="footer-column">
+          <a href="#">
+            Privacy
+          </a>
 
-        <h4>Shop</h4>
+          <a href="#">
+            Terms
+          </a>
 
-        <a href="categories.html">Women</a>
-        <a href="categories.html">Men</a>
-        <a href="categories.html">Shoes</a>
-        <a href="categories.html">Bags</a>
-        <a href="categories.html">Accessories</a>
+          <a href="#">
+            Contact
+          </a>
 
-      </div>
-
-      <div class="footer-column">
-
-        <h4>Veyra</h4>
-
-        <a href="#about">About</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms</a>
-        <a href="#">Affiliate Disclosure</a>
+        </div>
 
       </div>
-
-    </div>
-
-    <div class="footer-bottom">
-
-      <span>
-        © 2026 Veyra. All rights reserved.
-      </span>
-
-      <span>
-        Fashion discovery made simple.
-      </span>
 
     </div>
 
   </footer>
 
-  <script>
-    function handleSearch(event) {
-      if (event.key === "Enter") {
-        const query = event.target.value.trim();
 
-        if (query) {
-          window.location.href =
-            "products.html?search=" +
-            encodeURIComponent(query);
-        }
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+
+      if (menu.style.display === "block") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
       }
     }
+
+
+    function performSearch() {
+
+      const input = document.getElementById("searchBox");
+      const query = input.value.trim();
+
+      if (!query) {
+        input.focus();
+        return;
+      }
+
+      window.location.href =
+        "products.html?search=" +
+        encodeURIComponent(query);
+    }
+
+
+    function subscribe(event) {
+
+      event.preventDefault();
+
+      const email =
+        document.getElementById("email").value.trim();
+
+      if (!email) {
+        return;
+      }
+
+      alert(
+        "Thanks for joining Veyra! Newsletter subscriptions will be available soon."
+      );
+
+      event.target.reset();
+    }
+
+
+    document
+      .getElementById("searchBox")
+      .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+          performSearch();
+        }
+
+      });
+
   </script>
 
 </body>

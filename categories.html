@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="mitgo-verification" content="833edc8a-4cd7-4bc2-999e-cdf6f8f3c007" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Veyra — Discover What’s Worth Wearing</title>
-  <meta name="description" content="Veyra is a fashion discovery platform helping you find standout clothing, shoes, bags and accessories from across the web.">
+  <title>Veyra — Fashion Categories</title>
+  <meta name="description" content="Explore Veyra's fashion categories, from women's and men's fashion to shoes, bags, accessories, beauty and trending styles.">
+  <meta name="keywords" content="fashion, women's fashion, men's fashion, shoes, bags, accessories, beauty, dresses, streetwear, Veyra">
 
   <style>
     * {
@@ -17,12 +17,12 @@
     }
 
     :root {
-      --black: #101010;
-      --cream: #f5f2ec;
-      --soft: #faf9f7;
-      --white: #fff;
-      --gray: #77736d;
-      --line: #e4e0d9;
+      --black: #111111;
+      --dark: #1b1b1b;
+      --gray: #666;
+      --light: #f7f7f5;
+      --border: #e7e7e4;
+      --white: #ffffff;
     }
 
     html {
@@ -31,9 +31,9 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
       color: var(--black);
-      background: var(--white);
-      overflow-x: hidden;
+      line-height: 1.5;
     }
 
     a {
@@ -41,39 +41,29 @@
       text-decoration: none;
     }
 
-    button,
-    input {
-      font: inherit;
-    }
-
     /* TOP BAR */
-
     .topbar {
       background: var(--black);
-      color: white;
+      color: #fff;
       text-align: center;
       padding: 9px 20px;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+      font-size: 12px;
+      letter-spacing: .5px;
     }
 
     /* HEADER */
-
     header {
-      background: rgba(255,255,255,.96);
-      border-bottom: 1px solid var(--line);
+      background: #fff;
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      z-index: 100;
-      backdrop-filter: blur(15px);
+      z-index: 1000;
     }
 
-    .nav {
-      max-width: 1380px;
+    .header-main {
+      max-width: 1400px;
       margin: auto;
-      min-height: 78px;
-      padding: 0 35px;
+      padding: 22px 5%;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -81,563 +71,350 @@
     }
 
     .logo {
-      font-size: 27px;
+      font-size: 31px;
       font-weight: 900;
-      letter-spacing: 6px;
+      letter-spacing: 4px;
       white-space: nowrap;
     }
 
-    .nav-links {
+    .main-nav {
       display: flex;
-      gap: 30px;
+      gap: 28px;
       align-items: center;
+    }
+
+    .main-nav a {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      transition: opacity .2s;
+    }
+
+    .main-nav a:hover {
+      opacity: .55;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .header-action {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 440px;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.72), rgba(0,0,0,.25)),
+        url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      width: 1400px;
+      max-width: 90%;
+      margin: auto;
+    }
+
+    .eyebrow {
       font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 18px;
+      opacity: .85;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 7vw, 82px);
+      line-height: .95;
+      max-width: 750px;
+      margin-bottom: 24px;
+      letter-spacing: -3px;
+    }
+
+    .hero p {
+      max-width: 590px;
+      font-size: 18px;
+      color: #eee;
+      margin-bottom: 30px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      background: white;
+      color: var(--black);
+      padding: 14px 27px;
+      font-size: 13px;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
 
-    .nav-links a {
-      position: relative;
-      padding: 8px 0;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 1px;
-      background: var(--black);
-      transition: width .25s;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .search {
-      width: 210px;
-      position: relative;
-    }
-
-    .search input {
-      width: 100%;
-      border: 1px solid var(--line);
-      background: var(--soft);
-      border-radius: 999px;
-      padding: 11px 16px;
-      outline: none;
-      font-size: 12px;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 760px;
-      position: relative;
-      background:
-        linear-gradient(90deg, rgba(0,0,0,.67), rgba(0,0,0,.08)),
-        url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=2200&q=90")
-        center/cover;
-      display: flex;
-      align-items: center;
-      color: white;
-    }
-
-    .hero-content {
-      max-width: 1380px;
-      width: 100%;
-      margin: auto;
-      padding: 80px 35px;
-    }
-
-    .hero-label {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      margin-bottom: 25px;
-      font-weight: bold;
-    }
-
-    .hero h1 {
-      font-size: clamp(58px, 8vw, 105px);
-      line-height: .88;
-      letter-spacing: -5px;
-      max-width: 850px;
-      margin-bottom: 30px;
-    }
-
-    .hero p {
-      max-width: 520px;
-      font-size: 17px;
-      line-height: 1.7;
-      color: rgba(255,255,255,.88);
-      margin-bottom: 38px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      min-height: 52px;
-      padding: 0 28px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      transition: all .25s;
-    }
-
-    .btn-white {
-      background: white;
-      color: black;
-    }
-
-    .btn-white:hover {
-      transform: translateY(-3px);
-    }
-
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,.65);
-      color: white;
-    }
-
-    .btn-outline:hover {
-      background: white;
-      color: black;
-    }
-
-    /* INTRO */
-
-    .intro {
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-      padding: 125px 30px 110px;
-    }
-
-    .small-title {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      color: var(--gray);
-      margin-bottom: 18px;
-      font-weight: bold;
-    }
-
-    .intro h2 {
-      font-family: Georgia, serif;
-      font-size: clamp(38px, 5vw, 64px);
-      line-height: 1.05;
-      font-weight: 400;
-      letter-spacing: -2px;
-      margin-bottom: 25px;
-    }
-
-    .intro p {
-      max-width: 650px;
-      margin: auto;
-      color: var(--gray);
-      font-size: 16px;
-      line-height: 1.8;
-    }
-
-    /* CATEGORY STRIP */
-
+    /* SECTION */
     .section {
-      max-width: 1380px;
+      max-width: 1400px;
       margin: auto;
-      padding: 0 35px 110px;
+      padding: 80px 5%;
     }
 
-    .heading {
+    .section-heading {
       display: flex;
       align-items: end;
       justify-content: space-between;
-      margin-bottom: 30px;
-    }
-
-    .heading h2 {
-      font-family: Georgia, serif;
-      font-size: 38px;
-      font-weight: 400;
-      letter-spacing: -1px;
-    }
-
-    .heading a {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      text-decoration: underline;
-    }
-
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-    }
-
-    .category {
-      height: 430px;
-      position: relative;
-      overflow: hidden;
-      background: #ddd;
-    }
-
-    .category img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .7s;
-    }
-
-    .category:hover img {
-      transform: scale(1.07);
-    }
-
-    .category::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(transparent 40%, rgba(0,0,0,.7));
-    }
-
-    .category-name {
-      position: absolute;
-      bottom: 28px;
-      left: 28px;
-      color: white;
-      z-index: 2;
-    }
-
-    .category-name span {
-      display: block;
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 5px;
-      opacity: .8;
-    }
-
-    .category-name h3 {
-      font-family: Georgia, serif;
-      font-size: 30px;
-      font-weight: 400;
-    }
-
-    /* EDITORIAL */
-
-    .editorial {
-      background: var(--cream);
-      padding: 110px 0;
-    }
-
-    .editorial-grid {
-      max-width: 1380px;
-      margin: auto;
-      padding: 0 35px;
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      min-height: 620px;
-    }
-
-    .editorial-image {
-      overflow: hidden;
-    }
-
-    .editorial-image img {
-      width: 100%;
-      height: 100%;
-      min-height: 620px;
-      object-fit: cover;
-    }
-
-    .editorial-content {
-      background: #ebe6dd;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 75px;
-    }
-
-    .editorial-content .small-title {
-      color: #777;
-    }
-
-    .editorial-content h2 {
-      font-family: Georgia, serif;
-      font-size: clamp(42px, 5vw, 70px);
-      line-height: .98;
-      font-weight: 400;
-      letter-spacing: -3px;
-      margin-bottom: 25px;
-    }
-
-    .editorial-content p {
-      color: #666;
-      max-width: 450px;
-      line-height: 1.8;
-      font-size: 15px;
+      gap: 30px;
       margin-bottom: 35px;
     }
 
-    .dark-btn {
-      display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      min-height: 50px;
-      padding: 0 25px;
-      background: var(--black);
-      color: white;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-weight: bold;
+    .section-heading h2 {
+      font-size: 38px;
+      letter-spacing: -1.5px;
     }
 
-    /* PRODUCTS */
-
-    .products-section {
-      padding-top: 110px;
+    .section-heading p {
+      color: var(--gray);
+      max-width: 500px;
+      font-size: 15px;
     }
 
-    .product-grid {
+    /* CATEGORY GRID */
+    .category-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 18px;
     }
 
-    .product {
-      min-width: 0;
+    .category-card {
+      position: relative;
+      height: 390px;
+      overflow: hidden;
+      background: #ddd;
     }
 
-    .product-image {
-      height: 390px;
-      background: #eee;
-      position: relative;
+    .category-card.large {
+      grid-column: span 2;
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    .category-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .category-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      padding: 28px;
+      color: white;
+      background: linear-gradient(
+        transparent 35%,
+        rgba(0,0,0,.72)
+      );
+    }
+
+    .category-overlay span {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+
+    .category-overlay h3 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .category-link {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      width: fit-content;
+      border-bottom: 1px solid white;
+      padding-bottom: 4px;
+    }
+
+    /* QUICK CATEGORIES */
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .quick-card {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 28px 15px;
+      text-align: center;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .quick-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,.07);
+    }
+
+    .quick-icon {
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .quick-card h3 {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .quick-card p {
+      color: var(--gray);
+      font-size: 11px;
+    }
+
+    /* COLLECTIONS */
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .collection {
+      background: white;
+      border: 1px solid var(--border);
       overflow: hidden;
     }
 
-    .product-image img {
+    .collection-image {
+      height: 280px;
+      overflow: hidden;
+    }
+
+    .collection-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform .5s;
     }
 
-    .product:hover img {
+    .collection:hover img {
       transform: scale(1.04);
     }
 
-    .product-tag {
-      position: absolute;
-      z-index: 2;
-      top: 13px;
-      left: 13px;
-      background: white;
-      padding: 7px 10px;
-      font-size: 8px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: bold;
+    .collection-content {
+      padding: 24px;
     }
 
-    .product-info {
-      padding: 17px 2px 0;
-    }
-
-    .brand {
-      color: #8a8782;
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 6px;
-    }
-
-    .product h3 {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 7px;
-    }
-
-    .product-meta {
-      color: #777;
-      font-size: 12px;
-      margin-bottom: 14px;
-    }
-
-    .product-link {
-      display: inline-block;
-      font-size: 9px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      border-bottom: 1px solid black;
-      padding-bottom: 3px;
-    }
-
-    /* VALUES */
-
-    .values {
-      background: var(--black);
-      color: white;
-      padding: 100px 35px;
-    }
-
-    .values-inner {
-      max-width: 1380px;
-      margin: auto;
-    }
-
-    .values-header {
-      max-width: 650px;
-      margin-bottom: 65px;
-    }
-
-    .values-header .small-title {
-      color: #aaa;
-    }
-
-    .values-header h2 {
-      font-family: Georgia, serif;
-      font-size: clamp(40px, 5vw, 60px);
-      font-weight: 400;
-      line-height: 1;
-    }
-
-    .value-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid #333;
-    }
-
-    .value {
-      padding: 35px 30px 0 0;
-      border-right: 1px solid #333;
-      margin-right: 30px;
-    }
-
-    .value:last-child {
-      border-right: 0;
-    }
-
-    .value-number {
+    .collection-content span {
       font-size: 10px;
-      color: #888;
+      text-transform: uppercase;
       letter-spacing: 2px;
-      margin-bottom: 35px;
+      color: #777;
     }
 
-    .value h3 {
-      font-family: Georgia, serif;
-      font-size: 27px;
-      font-weight: 400;
-      margin-bottom: 12px;
+    .collection-content h3 {
+      font-size: 24px;
+      margin: 7px 0 12px;
     }
 
-    .value p {
-      color: #aaa;
-      line-height: 1.7;
-      font-size: 13px;
-      max-width: 300px;
-    }
-
-    /* NEWSLETTER */
-
-    .newsletter {
-      padding: 120px 30px;
-      text-align: center;
-      background: var(--soft);
-    }
-
-    .newsletter h2 {
-      font-family: Georgia, serif;
-      font-weight: 400;
-      font-size: clamp(42px, 5vw, 65px);
-      margin-bottom: 15px;
-    }
-
-    .newsletter p {
+    .collection-content p {
       color: var(--gray);
-      margin-bottom: 32px;
-    }
-
-    .newsletter-form {
-      max-width: 490px;
-      margin: auto;
-      display: flex;
-      border-bottom: 1px solid #999;
-    }
-
-    .newsletter-form input {
-      flex: 1;
-      border: 0;
-      background: transparent;
-      padding: 15px 0;
-      outline: none;
-      font-size: 13px;
-    }
-
-    .newsletter-form button {
-      border: 0;
-      background: transparent;
-      font-size: 10px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      cursor: pointer;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #0b0b0b;
-      color: #999;
-      padding: 70px 35px 25px;
-    }
-
-    .footer-grid {
-      max-width: 1380px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 50px;
-      padding-bottom: 60px;
-    }
-
-    .footer-logo {
-      color: white;
-      font-size: 26px;
-      font-weight: 900;
-      letter-spacing: 6px;
+      font-size: 14px;
       margin-bottom: 18px;
     }
 
-    .footer-about {
-      max-width: 330px;
+    .collection-content a {
       font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 4px;
+    }
+
+    /* INFO */
+    .info {
+      background: var(--black);
+      color: white;
+    }
+
+    .info-inner {
+      max-width: 1400px;
+      margin: auto;
+      padding: 80px 5%;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .info h2 {
+      font-size: 42px;
+      letter-spacing: -1px;
+    }
+
+    .info p {
+      color: #bbb;
+      font-size: 16px;
       line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0b0b0b;
+      color: #aaa;
+    }
+
+    .footer-main {
+      max-width: 1400px;
+      margin: auto;
+      padding: 65px 5%;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 50px;
+    }
+
+    .footer-brand .logo {
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .footer-brand p {
+      max-width: 360px;
+      line-height: 1.7;
+      font-size: 14px;
     }
 
     .footer-column h4 {
       color: white;
-      font-size: 10px;
+      font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .footer-column a {
       display: block;
-      font-size: 12px;
-      margin-bottom: 12px;
+      font-size: 13px;
+      margin-bottom: 11px;
       transition: color .2s;
     }
 
@@ -646,171 +423,111 @@
     }
 
     .footer-bottom {
-      max-width: 1380px;
-      margin: auto;
-      padding-top: 23px;
       border-top: 1px solid #252525;
-      display: flex;
-      justify-content: space-between;
-      font-size: 10px;
-      gap: 20px;
+      padding: 20px 5%;
+      text-align: center;
+      font-size: 12px;
     }
 
-    /* RESPONSIVE */
-
-    @media (max-width: 1050px) {
-      .search {
-        display: none;
+    /* MOBILE */
+    @media (max-width: 1000px) {
+      .main-nav {
+        gap: 14px;
       }
 
-      .category-grid,
-      .product-grid {
+      .category-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .editorial-grid {
+      .quick-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .collection-grid {
         grid-template-columns: 1fr;
       }
 
-      .editorial-image img {
-        min-height: 550px;
-      }
-
-      .editorial-content {
-        min-height: 500px;
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
       }
     }
 
     @media (max-width: 700px) {
-      .nav {
-        min-height: 65px;
-        padding: 0 18px;
+      .header-main {
+        padding: 17px 5%;
       }
 
       .logo {
-        font-size: 21px;
+        font-size: 25px;
       }
 
-      .nav-links {
-        gap: 12px;
-        font-size: 9px;
+      .main-nav {
+        display: none;
       }
 
-      .nav-links a:nth-child(3),
-      .nav-links a:nth-child(4) {
+      .header-actions {
         display: none;
       }
 
       .hero {
-        min-height: 650px;
-      }
-
-      .hero-content {
-        padding: 60px 20px;
+        min-height: 520px;
       }
 
       .hero h1 {
-        font-size: 58px;
-        letter-spacing: -3px;
+        letter-spacing: -2px;
       }
 
       .section {
-        padding-left: 18px;
-        padding-right: 18px;
-        padding-bottom: 75px;
+        padding: 55px 5%;
       }
 
-      .intro {
-        padding: 85px 20px;
+      .section-heading {
+        display: block;
       }
 
-      .category-grid,
-      .product-grid {
+      .section-heading h2 {
+        font-size: 30px;
+        margin-bottom: 12px;
+      }
+
+      .category-grid {
         grid-template-columns: 1fr 1fr;
         gap: 10px;
       }
 
-      .category {
-        height: 290px;
-      }
-
-      .product-image {
+      .category-card {
         height: 270px;
       }
 
-      .editorial {
-        padding: 70px 0;
+      .category-card.large {
+        grid-column: span 2;
       }
 
-      .editorial-grid {
-        padding: 0 18px;
+      .category-overlay {
+        padding: 18px;
       }
 
-      .editorial-image img {
-        min-height: 430px;
+      .category-overlay h3 {
+        font-size: 22px;
       }
 
-      .editorial-content {
-        padding: 50px 30px;
+      .quick-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .value-grid {
+      .info-inner {
         grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 55px 5%;
       }
 
-      .value {
-        border-right: 0;
-        border-bottom: 1px solid #333;
-        padding: 30px 0;
-        margin: 0;
+      .info h2 {
+        font-size: 34px;
       }
 
-      .value:last-child {
-        border-bottom: 0;
-      }
-
-      .values {
-        padding: 75px 20px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        padding-bottom: 40px;
-      }
-
-      .footer-grid > div:first-child {
-        grid-column: 1 / -1;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 470px) {
-      .category-grid,
-      .product-grid {
+      .footer-main {
         grid-template-columns: 1fr;
-      }
-
-      .category {
-        height: 390px;
-      }
-
-      .product-image {
-        height: 390px;
-      }
-
-      .hero h1 {
-        font-size: 50px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid > div:first-child {
-        grid-column: auto;
+        gap: 35px;
       }
     }
   </style>
@@ -819,28 +536,24 @@
 <body>
 
   <div class="topbar">
-    Curated fashion discoveries — all in one place
+    Veyra — Discover fashion, styles and products worth exploring.
   </div>
 
   <header>
-    <div class="nav">
+    <div class="header-main">
 
       <a href="index.html" class="logo">VEYRA</a>
 
-      <nav class="nav-links">
-        <a href="categories.html">Women</a>
-        <a href="categories.html">Men</a>
-        <a href="categories.html">Shoes</a>
-        <a href="products.html">Discover</a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="products.html">Products</a>
+        <a href="index.html#trending">Trending</a>
       </nav>
 
-      <div class="search">
-        <input
-          type="search"
-          placeholder="Search fashion"
-          aria-label="Search fashion"
-          onkeydown="if(event.key==='Enter') window.location.href='products.html'"
-        >
+      <div class="header-actions">
+        <a href="products.html" class="header-action" aria-label="Search">⌕</a>
+        <a href="products.html" class="header-action" aria-label="Products">♡</a>
       </div>
 
     </div>
@@ -849,402 +562,320 @@
   <main>
 
     <!-- HERO -->
-
     <section class="hero">
       <div class="hero-content">
 
-        <div class="hero-label">
-          Veyra / Fashion Discovery
+        <div class="eyebrow">
+          Veyra Fashion Discovery
         </div>
 
-        <h1>
-          Discover what's worth wearing.
-        </h1>
+        <h1>Find the style that feels like you.</h1>
 
         <p>
-          Explore standout fashion, footwear and accessories from across
-          the web. Inspiration first. Your style, your choice.
+          Explore fashion across categories, discover new looks,
+          and find products selected for modern everyday style.
         </p>
 
-        <div class="hero-buttons">
-          <a href="products.html" class="btn btn-white">
-            Explore the edit
-          </a>
-
-          <a href="categories.html" class="btn btn-outline">
-            Browse categories
-          </a>
-        </div>
+        <a href="products.html" class="hero-button">
+          Explore Products
+        </a>
 
       </div>
     </section>
 
-    <!-- INTRO -->
-
-    <section class="intro">
-
-      <div class="small-title">
-        The Veyra approach
-      </div>
-
-      <h2>
-        Less searching.<br>
-        More discovering.
-      </h2>
-
-      <p>
-        Veyra brings together fashion discoveries from across the web,
-        making it easier to explore new styles, collections and products
-        without endlessly searching from store to store.
-      </p>
-
-    </section>
-
-    <!-- CATEGORIES -->
-
+    <!-- MAIN CATEGORIES -->
     <section class="section">
 
-      <div class="heading">
-        <h2>Explore categories</h2>
-        <a href="categories.html">View all →</a>
+      <div class="section-heading">
+        <div>
+          <h2>Shop by Category</h2>
+        </div>
+
+        <p>
+          Explore Veyra's main fashion categories and discover
+          different styles, products and inspiration.
+        </p>
       </div>
 
       <div class="category-grid">
 
-        <a href="categories.html" class="category">
+        <a href="products.html?category=women" class="category-card large">
           <img
-            src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1100&q=90"
+            src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1000&q=85"
             alt="Women's fashion"
           >
-          <div class="category-name">
-            <span>01 / Collection</span>
-            <h3>Women</h3>
+          <div class="category-overlay">
+            <span>Explore</span>
+            <h3>Women's Fashion</h3>
+            <div class="category-link">Shop Women →</div>
           </div>
         </a>
 
-        <a href="categories.html" class="category">
+        <a href="products.html?category=men" class="category-card">
           <img
-            src="https://images.unsplash.com/photo-1516826957135-700dedea698c?auto=format&fit=crop&w=1100&q=90"
+            src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=900&q=85"
             alt="Men's fashion"
           >
-          <div class="category-name">
-            <span>02 / Collection</span>
+          <div class="category-overlay">
+            <span>Explore</span>
             <h3>Men</h3>
+            <div class="category-link">Discover →</div>
           </div>
         </a>
 
-        <a href="categories.html" class="category">
+        <a href="products.html?category=shoes" class="category-card">
           <img
-            src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=1100&q=90"
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85"
             alt="Fashion shoes"
           >
-          <div class="category-name">
-            <span>03 / Collection</span>
+          <div class="category-overlay">
+            <span>Explore</span>
             <h3>Shoes</h3>
+            <div class="category-link">Discover →</div>
           </div>
         </a>
 
-        <a href="categories.html" class="category">
+        <a href="products.html?category=bags" class="category-card">
           <img
-            src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=1100&q=90"
-            alt="Fashion bags and accessories"
+            src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=85"
+            alt="Fashion bags"
           >
-          <div class="category-name">
-            <span>04 / Collection</span>
+          <div class="category-overlay">
+            <span>Explore</span>
+            <h3>Bags</h3>
+            <div class="category-link">Discover →</div>
+          </div>
+        </a>
+
+        <a href="products.html?category=accessories" class="category-card large">
+          <img
+            src="https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?auto=format&fit=crop&w=1100&q=85"
+            alt="Fashion accessories"
+          >
+          <div class="category-overlay">
+            <span>Explore</span>
             <h3>Accessories</h3>
+            <div class="category-link">Shop Accessories →</div>
           </div>
         </a>
 
       </div>
-
     </section>
 
-    <!-- EDITORIAL FEATURE -->
+    <!-- QUICK CATEGORIES -->
+    <section class="section" style="padding-top: 10px;">
 
-    <section class="editorial">
+      <div class="section-heading">
+        <div>
+          <h2>Explore More</h2>
+        </div>
+      </div>
 
-      <div class="editorial-grid">
+      <div class="quick-grid">
 
-        <div class="editorial-image">
-          <img
-            src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1300&q=90"
-            alt="Fashion collection"
-          >
+        <a href="products.html?category=dresses" class="quick-card">
+          <div class="quick-icon">◇</div>
+          <h3>Dresses</h3>
+          <p>Everyday & occasion</p>
+        </a>
+
+        <a href="products.html?category=streetwear" class="quick-card">
+          <div class="quick-icon">◈</div>
+          <h3>Streetwear</h3>
+          <p>Modern urban style</p>
+        </a>
+
+        <a href="products.html?category=activewear" class="quick-card">
+          <div class="quick-icon">△</div>
+          <h3>Activewear</h3>
+          <p>Style in motion</p>
+        </a>
+
+        <a href="products.html?category=jewelry" class="quick-card">
+          <div class="quick-icon">✦</div>
+          <h3>Jewelry</h3>
+          <p>Finishing touches</p>
+        </a>
+
+        <a href="products.html?category=beauty" class="quick-card">
+          <div class="quick-icon">○</div>
+          <h3>Beauty</h3>
+          <p>Beauty & care</p>
+        </a>
+
+        <a href="products.html?category=occasion" class="quick-card">
+          <div class="quick-icon">✧</div>
+          <h3>Occasion</h3>
+          <p>Special moments</p>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- EDITORIAL COLLECTIONS -->
+    <section class="section">
+
+      <div class="section-heading">
+        <div>
+          <h2>The Veyra Edit</h2>
         </div>
 
-        <div class="editorial-content">
+        <p>
+          Curated style directions to help you discover what
+          to wear next.
+        </p>
+      </div>
 
-          <div class="small-title">
-            Veyra / The Edit
+      <div class="collection-grid">
+
+        <article class="collection">
+
+          <div class="collection-image">
+            <img
+              src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=85"
+              alt="Minimal fashion collection"
+            >
           </div>
 
-          <h2>
-            The pieces that define the season.
-          </h2>
+          <div class="collection-content">
+            <span>Style Guide</span>
+            <h3>Minimal & Modern</h3>
+            <p>
+              Clean silhouettes, versatile pieces and effortless
+              everyday combinations.
+            </p>
+            <a href="products.html?collection=minimal">
+              Explore Edit →
+            </a>
+          </div>
 
+        </article>
+
+        <article class="collection">
+
+          <div class="collection-image">
+            <img
+              src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1000&q=85"
+              alt="Contemporary fashion collection"
+            >
+          </div>
+
+          <div class="collection-content">
+            <span>Style Guide</span>
+            <h3>Everyday Essentials</h3>
+            <p>
+              Easy-to-wear fashion inspiration for work, weekends
+              and everyday life.
+            </p>
+            <a href="products.html?collection=essentials">
+              Explore Edit →
+            </a>
+          </div>
+
+        </article>
+
+        <article class="collection">
+
+          <div class="collection-image">
+            <img
+              src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1000&q=85"
+              alt="Evening fashion collection"
+            >
+          </div>
+
+          <div class="collection-content">
+            <span>Style Guide</span>
+            <h3>Occasion Ready</h3>
+            <p>
+              Discover looks for celebrations, evenings, events
+              and special occasions.
+            </p>
+            <a href="products.html?collection=occasion">
+              Explore Edit →
+            </a>
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ABOUT VEYRA -->
+    <section class="info">
+
+      <div class="info-inner">
+
+        <div>
+          <div class="eyebrow">About Veyra</div>
+          <h2>Fashion discovery, made simpler.</h2>
+        </div>
+
+        <div>
           <p>
-            From everyday essentials to statement pieces, discover
-            styles selected for their ability to make an outfit feel
-            considered.
+            Veyra is a fashion discovery platform designed to help
+            shoppers explore styles, categories and products from
+            across the web.
           </p>
 
-          <a href="products.html" class="dark-btn">
-            Explore the selection →
-          </a>
+          <p>
+            Our goal is simple: make discovering your next favorite
+            fashion piece easier, more inspiring and more enjoyable.
+          </p>
 
+          <a href="index.html" class="hero-button">
+            Discover Veyra
+          </a>
         </div>
 
       </div>
-
-    </section>
-
-    <!-- PRODUCTS -->
-
-    <section class="section products-section">
-
-      <div class="heading">
-        <h2>Trending discoveries</h2>
-        <a href="products.html">See everything →</a>
-      </div>
-
-      <div class="product-grid">
-
-        <article class="product">
-
-          <a href="product.html">
-            <div class="product-image">
-              <span class="product-tag">Featured</span>
-              <img
-                src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=90"
-                alt="Modern fashion outfit"
-              >
-            </div>
-          </a>
-
-          <div class="product-info">
-            <div class="brand">Veyra Edit</div>
-            <h3>Modern everyday style</h3>
-            <div class="product-meta">Explore this selection</div>
-            <a href="product.html" class="product-link">Discover product →</a>
-          </div>
-
-        </article>
-
-        <article class="product">
-
-          <a href="product.html">
-            <div class="product-image">
-              <span class="product-tag">Trending</span>
-              <img
-                src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1000&q=90"
-                alt="Street style fashion"
-              >
-            </div>
-          </a>
-
-          <div class="product-info">
-            <div class="brand">Street Edit</div>
-            <h3>Contemporary street style</h3>
-            <div class="product-meta">Explore this selection</div>
-            <a href="product.html" class="product-link">Discover product →</a>
-          </div>
-
-        </article>
-
-        <article class="product">
-
-          <a href="product.html">
-            <div class="product-image">
-              <span class="product-tag">New</span>
-              <img
-                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=90"
-                alt="Fashion shopping collection"
-              >
-            </div>
-          </a>
-
-          <div class="product-info">
-            <div class="brand">New Season</div>
-            <h3>Fresh season finds</h3>
-            <div class="product-meta">Explore this selection</div>
-            <a href="product.html" class="product-link">Discover product →</a>
-          </div>
-
-        </article>
-
-        <article class="product">
-
-          <a href="product.html">
-            <div class="product-image">
-              <span class="product-tag">Edit</span>
-              <img
-                src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=1000&q=90"
-                alt="Clothing collection"
-              >
-            </div>
-          </a>
-
-          <div class="product-info">
-            <div class="brand">Veyra Selection</div>
-            <h3>Seasonal essentials</h3>
-            <div class="product-meta">Explore this selection</div>
-            <a href="product.html" class="product-link">Discover product →</a>
-          </div>
-
-        </article>
-
-      </div>
-
-    </section>
-
-    <!-- WHY VEYRA -->
-
-    <section class="values">
-
-      <div class="values-inner">
-
-        <div class="values-header">
-
-          <div class="small-title">
-            Why Veyra
-          </div>
-
-          <h2>
-            A better way to discover fashion online.
-          </h2>
-
-        </div>
-
-        <div class="value-grid">
-
-          <div class="value">
-            <div class="value-number">01</div>
-            <h3>Discover</h3>
-            <p>
-              Find interesting styles and products from across the web
-              in one focused destination.
-            </p>
-          </div>
-
-          <div class="value">
-            <div class="value-number">02</div>
-            <h3>Explore</h3>
-            <p>
-              Browse categories and curated selections designed to make
-              fashion discovery easier.
-            </p>
-          </div>
-
-          <div class="value">
-            <div class="value-number">03</div>
-            <h3>Shop</h3>
-            <p>
-              When something catches your eye, visit the retailer to
-              learn more and make your purchase there.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- NEWSLETTER -->
-
-    <section class="newsletter">
-
-      <div class="small-title">
-        Veyra Journal
-      </div>
-
-      <h2>Stay inspired.</h2>
-
-      <p>
-        Get occasional fashion discoveries and new Veyra edits.
-      </p>
-
-      <form
-        class="newsletter-form"
-        onsubmit="event.preventDefault(); alert('Thanks for joining Veyra.');"
-      >
-        <input
-          type="email"
-          placeholder="Email address"
-          aria-label="Email address"
-          required
-        >
-
-        <button type="submit">
-          Join →
-        </button>
-      </form>
 
     </section>
 
   </main>
 
   <!-- FOOTER -->
-
   <footer>
 
-    <div class="footer-grid">
+    <div class="footer-main">
 
-      <div>
-
-        <div class="footer-logo">
-          VEYRA
-        </div>
-
-        <p class="footer-about">
-          Veyra is a fashion discovery platform helping people discover
-          clothing, footwear, accessories and style from across the web.
+      <div class="footer-brand">
+        <div class="logo">VEYRA</div>
+        <p>
+          A modern fashion discovery platform helping you explore
+          styles, categories and products worth discovering.
         </p>
-
       </div>
 
       <div class="footer-column">
-
         <h4>Discover</h4>
-
-        <a href="products.html">Products</a>
+        <a href="index.html">Home</a>
         <a href="categories.html">Categories</a>
-        <a href="products.html">Trending</a>
-
+        <a href="products.html">Products</a>
+        <a href="products.html?category=trending">Trending</a>
       </div>
 
       <div class="footer-column">
+        <h4>Categories</h4>
+        <a href="products.html?category=women">Women</a>
+        <a href="products.html?category=men">Men</a>
+        <a href="products.html?category=shoes">Shoes</a>
+        <a href="products.html?category=bags">Bags</a>
+        <a href="products.html?category=accessories">Accessories</a>
+      </div>
 
+      <div class="footer-column">
         <h4>Veyra</h4>
-
-        <a href="#top">Home</a>
-        <a href="#about">About</a>
-        <a href="#">Contact</a>
-
-      </div>
-
-      <div class="footer-column">
-
-        <h4>Information</h4>
-
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms</a>
-        <a href="#">Affiliate Disclosure</a>
-
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
       </div>
 
     </div>
 
     <div class="footer-bottom">
-
-      <span>
-        © 2026 Veyra. All rights reserved.
-      </span>
-
-      <span>
-        Fashion discovery made simple.
-      </span>
-
+      © 2026 Veyra. All rights reserved.
     </div>
 
   </footer>

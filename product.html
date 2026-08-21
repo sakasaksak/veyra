@@ -5,12 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Discover Fashion Products — Veyra</title>
-
-  <meta
-    name="description"
-    content="Discover curated fashion products, trending styles, footwear, bags, accessories and more with Veyra."
-  >
+  <title>Classic White Sneakers — Veyra</title>
+  <meta name="description" content="Discover the Classic White Sneakers on Veyra. Explore product details, fashion inspiration and available offers from partner stores.">
 
   <style>
     * {
@@ -21,11 +17,11 @@
 
     :root {
       --black: #111;
+      --dark: #181818;
+      --gray: #707070;
+      --light: #f7f7f5;
+      --border: #e6e6e2;
       --white: #fff;
-      --cream: #f4f1eb;
-      --soft: #faf9f7;
-      --gray: #77736d;
-      --line: #e5e1da;
     }
 
     html {
@@ -34,8 +30,8 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
       color: var(--black);
-      background: var(--white);
     }
 
     a {
@@ -46,32 +42,28 @@
     /* TOP BAR */
 
     .topbar {
-      background: var(--black);
+      background: #111;
       color: white;
       text-align: center;
       padding: 9px 20px;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+      font-size: 12px;
+      letter-spacing: .5px;
     }
 
     /* HEADER */
 
     header {
+      background: white;
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(255,255,255,.96);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(15px);
+      z-index: 1000;
     }
 
-    .nav {
-      max-width: 1380px;
-      min-height: 78px;
+    .header-main {
+      max-width: 1400px;
       margin: auto;
-      padding: 0 35px;
-
+      padding: 20px 5%;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -79,464 +71,510 @@
     }
 
     .logo {
-      font-size: 27px;
+      font-size: 30px;
       font-weight: 900;
-      letter-spacing: 6px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .nav-links a {
-      position: relative;
-      padding: 8px 0;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 1px;
-      background: #111;
-      transition: width .25s;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .search {
-      width: 220px;
-    }
-
-    .search input {
-      width: 100%;
-      padding: 11px 17px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: var(--soft);
-      outline: none;
-      font-size: 12px;
-    }
-
-    /* HERO */
-
-    .hero {
-      background: var(--cream);
-      text-align: center;
-      padding: 100px 25px 90px;
-    }
-
-    .eyebrow {
-      margin-bottom: 18px;
-      color: var(--gray);
-      font-size: 10px;
-      font-weight: bold;
-      text-transform: uppercase;
       letter-spacing: 4px;
     }
 
-    .hero h1 {
-      font-family: Georgia, serif;
-      font-size: clamp(55px, 8vw, 95px);
-      font-weight: 400;
-      line-height: .92;
-      letter-spacing: -5px;
-      margin-bottom: 25px;
-    }
-
-    .hero p {
-      max-width: 650px;
-      margin: auto;
-      color: var(--gray);
-      line-height: 1.8;
-      font-size: 16px;
-    }
-
-    /* CONTROLS */
-
-    .catalog {
-      max-width: 1380px;
-      margin: auto;
-      padding: 70px 35px 110px;
-    }
-
-    .catalog-top {
+    nav {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-      margin-bottom: 30px;
+      gap: 28px;
     }
 
-    .catalog-title h2 {
-      font-family: Georgia, serif;
-      font-size: 38px;
-      font-weight: 400;
-      letter-spacing: -1px;
-    }
-
-    .catalog-title p {
-      margin-top: 8px;
-      color: var(--gray);
+    nav a {
       font-size: 12px;
-    }
-
-    .filters {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .filter {
-      border: 1px solid var(--line);
-      background: white;
-      padding: 10px 16px;
-      cursor: pointer;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: all .2s;
-    }
-
-    .filter:hover,
-    .filter.active {
-      background: var(--black);
-      color: white;
-      border-color: var(--black);
-    }
-
-    /* PRODUCT GRID */
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      position: relative;
-      background: white;
-      overflow: hidden;
-      transition: transform .25s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .image-wrap {
-      position: relative;
-      overflow: hidden;
-      background: #eee;
-      aspect-ratio: 4 / 5;
-    }
-
-    .image-wrap img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      transition: transform .6s;
-    }
-
-    .card:hover .image-wrap img {
-      transform: scale(1.05);
-    }
-
-    .badge {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      z-index: 2;
-
-      padding: 7px 10px;
-      background: white;
-
-      font-size: 9px;
-      font-weight: bold;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
 
-    .card-content {
-      padding: 18px 2px 10px;
+    nav a:hover {
+      opacity: .5;
     }
 
-    .category {
-      color: #999;
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 8px;
-    }
-
-    .card h3 {
-      font-family: Georgia, serif;
-      font-size: 20px;
-      font-weight: 400;
-      margin-bottom: 8px;
-    }
-
-    .card-description {
-      color: var(--gray);
-      font-size: 12px;
-      line-height: 1.6;
-      min-height: 38px;
-      margin-bottom: 14px;
-    }
-
-    .card-bottom {
+    .header-actions {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
       gap: 10px;
     }
 
-    .price {
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .discover {
-      display: inline-flex;
+    .header-action {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 17px;
+    }
 
-      padding: 11px 15px;
-      background: var(--black);
-      color: white;
+    /* BREADCRUMB */
 
-      font-size: 9px;
+    .breadcrumb {
+      max-width: 1400px;
+      margin: auto;
+      padding: 25px 5% 0;
+      color: #777;
+      font-size: 12px;
+    }
+
+    .breadcrumb a:hover {
+      color: #111;
+    }
+
+    /* PRODUCT */
+
+    .product {
+      max-width: 1400px;
+      margin: auto;
+      padding: 35px 5% 80px;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    /* IMAGE */
+
+    .gallery {
+      position: sticky;
+      top: 100px;
+    }
+
+    .main-image {
+      background: #eee;
+      width: 100%;
+      height: 650px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .main-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-badge {
+      position: absolute;
+      left: 18px;
+      top: 18px;
+      background: white;
+      padding: 9px 13px;
+      font-size: 10px;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 1px;
-      transition: background .2s;
     }
 
-    .discover:hover {
-      background: #333;
+    /* INFO */
+
+    .product-info {
+      padding-top: 20px;
     }
 
-    /* INFORMATION STRIP */
-
-    .info-strip {
-      margin-top: 75px;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+    .category {
+      color: #777;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
     }
 
-    .info-item {
-      padding: 30px;
-      text-align: center;
-      border-right: 1px solid var(--line);
+    .product-info h1 {
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
     }
 
-    .info-item:last-child {
-      border-right: none;
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 25px;
+      font-size: 13px;
     }
 
-    .info-item strong {
-      display: block;
+    .stars {
+      letter-spacing: 3px;
+    }
+
+    .review-count {
+      color: #777;
+    }
+
+    .price {
+      font-size: 30px;
+      font-weight: 800;
       margin-bottom: 8px;
-      font-family: Georgia, serif;
+    }
+
+    .price-note {
+      color: #777;
+      font-size: 12px;
+      margin-bottom: 28px;
+    }
+
+    .description {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    /* DETAILS */
+
+    .details {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 30px;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .detail-row:last-child {
+      border-bottom: 0;
+    }
+
+    .detail-label {
+      color: #777;
+    }
+
+    .detail-value {
+      font-weight: 700;
+    }
+
+    /* CTA */
+
+    .deal-box {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 25px;
+      margin-bottom: 25px;
+    }
+
+    .deal-box h3 {
       font-size: 18px;
-      font-weight: 400;
+      margin-bottom: 8px;
     }
 
-    .info-item span {
-      color: var(--gray);
-      font-size: 10px;
-      line-height: 1.5;
+    .deal-box p {
+      color: #777;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 20px;
     }
 
-    /* NEWSLETTER */
-
-    .newsletter {
+    .deal-button {
+      display: block;
+      width: 100%;
+      text-align: center;
       background: var(--black);
       color: white;
-      padding: 90px 30px;
-      text-align: center;
+      padding: 17px 25px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      transition: opacity .2s;
     }
 
-    .newsletter h2 {
-      font-family: Georgia, serif;
-      font-size: clamp(38px, 5vw, 58px);
-      font-weight: 400;
-      margin-bottom: 18px;
+    .deal-button:hover {
+      opacity: .8;
     }
 
-    .newsletter p {
-      max-width: 520px;
-      margin: auto;
-      color: #aaa;
-      line-height: 1.7;
+    .affiliate-note {
+      color: #888;
+      font-size: 11px;
+      line-height: 1.5;
+      margin-top: 13px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 5px;
+      color: #555;
       font-size: 13px;
+      border-bottom: 1px solid #aaa;
+      padding-bottom: 3px;
+    }
+
+    /* WHY VEYRA */
+
+    .why {
+      background: white;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 60px 5%;
+    }
+
+    .why-inner {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-eyebrow {
+      color: #777;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .why h2 {
+      font-size: 35px;
+      letter-spacing: -1px;
+      margin-bottom: 30px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .why-card {
+      padding: 25px;
+      background: var(--light);
+    }
+
+    .why-card span {
+      display: block;
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .why-card h3 {
+      font-size: 16px;
+      margin-bottom: 9px;
+    }
+
+    .why-card p {
+      color: #777;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* RELATED */
+
+    .related {
+      max-width: 1400px;
+      margin: auto;
+      padding: 70px 5%;
+    }
+
+    .related-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    .related-heading h2 {
+      font-size: 34px;
+      letter-spacing: -1px;
+    }
+
+    .related-heading a {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #111;
+      padding-bottom: 4px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .related-card {
+      background: white;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .related-image {
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .related-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s;
+    }
+
+    .related-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .related-info {
+      padding: 17px;
+    }
+
+    .related-category {
+      color: #888;
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      margin-bottom: 7px;
+    }
+
+    .related-info h3 {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .related-price {
+      font-size: 14px;
+      font-weight: 800;
     }
 
     /* FOOTER */
 
     footer {
       background: #0b0b0b;
-      color: #999;
-      padding: 65px 35px 25px;
+      color: #aaa;
     }
 
-    .footer-grid {
-      max-width: 1380px;
+    .footer-main {
+      max-width: 1400px;
       margin: auto;
-
+      padding: 60px 5%;
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1fr;
       gap: 50px;
-
-      padding-bottom: 50px;
     }
 
-    .footer-logo {
+    .footer-brand .logo {
       color: white;
-      font-size: 26px;
-      font-weight: 900;
-      letter-spacing: 6px;
-      margin-bottom: 18px;
+      margin-bottom: 15px;
     }
 
-    .footer-about {
-      max-width: 350px;
-      font-size: 12px;
-      line-height: 1.8;
+    .footer-brand p {
+      max-width: 360px;
+      font-size: 13px;
+      line-height: 1.7;
     }
 
     .footer-column h4 {
       color: white;
-      margin-bottom: 20px;
-
-      font-size: 10px;
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 1.5px;
+      margin-bottom: 18px;
     }
 
     .footer-column a {
       display: block;
-      margin-bottom: 12px;
-      font-size: 12px;
+      font-size: 13px;
+      margin-bottom: 11px;
+    }
+
+    .footer-column a:hover {
+      color: white;
     }
 
     .footer-bottom {
-      max-width: 1380px;
-      margin: auto;
-
-      padding-top: 22px;
       border-top: 1px solid #252525;
-
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-
-      font-size: 10px;
+      text-align: center;
+      padding: 20px 5%;
+      font-size: 11px;
     }
 
-    /* RESPONSIVE */
+    /* MOBILE */
 
-    @media (max-width: 1100px) {
-      .grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .search {
-        display: none;
-      }
-    }
-
-    @media (max-width: 800px) {
-      .nav {
-        min-height: 65px;
-        padding: 0 18px;
-      }
-
-      .logo {
-        font-size: 21px;
-      }
-
-      .nav-links {
-        gap: 14px;
-        font-size: 9px;
-      }
-
-      .nav-links a:nth-child(3),
-      .nav-links a:nth-child(4) {
+    @media (max-width: 900px) {
+      nav {
         display: none;
       }
 
-      .catalog-top {
-        align-items: flex-start;
-        flex-direction: column;
+      .product {
+        grid-template-columns: 1fr;
+        gap: 35px;
       }
 
-      .grid {
+      .gallery {
+        position: static;
+      }
+
+      .main-image {
+        height: 550px;
+      }
+
+      .related-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .info-strip {
+      .why-grid {
         grid-template-columns: 1fr;
       }
 
-      .info-item {
-        border-right: none;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .info-item:last-child {
-        border-bottom: none;
-      }
-
-      .footer-grid {
+      .footer-main {
         grid-template-columns: 1fr 1fr;
-      }
-
-      .footer-grid > div:first-child {
-        grid-column: 1 / -1;
       }
     }
 
-    @media (max-width: 520px) {
-      .hero {
-        padding: 80px 20px;
+    @media (max-width: 600px) {
+      .header-actions {
+        display: none;
       }
 
-      .catalog {
-        padding: 60px 18px 80px;
+      .product {
+        padding-left: 4%;
+        padding-right: 4%;
       }
 
-      .grid {
+      .main-image {
+        height: 440px;
+      }
+
+      .product-info h1 {
+        font-size: 40px;
+      }
+
+      .related {
+        padding-left: 4%;
+        padding-right: 4%;
+      }
+
+      .related-heading {
+        display: block;
+      }
+
+      .related-heading h2 {
+        margin-bottom: 15px;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .related-image {
+        height: 220px;
+      }
+
+      .related-info {
+        padding: 12px;
+      }
+
+      .footer-main {
         grid-template-columns: 1fr;
-      }
-
-      .card-description {
-        min-height: auto;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid > div:first-child {
-        grid-column: auto;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
+        gap: 35px;
       }
     }
   </style>
@@ -545,547 +583,361 @@
 <body>
 
   <div class="topbar">
-    Curated fashion discoveries — updated regularly
+    Discover fashion. Compare styles. Find your next look.
   </div>
 
   <header>
+    <div class="header-main">
 
-    <div class="nav">
+      <a href="index.html" class="logo">VEYRA</a>
 
-      <a href="index.html" class="logo">
-        VEYRA
-      </a>
-
-      <nav class="nav-links">
+      <nav>
         <a href="index.html">Home</a>
         <a href="categories.html">Categories</a>
-        <a href="products.html">Discover</a>
-        <a href="index.html#about">About</a>
+        <a href="products.html">Products</a>
+        <a href="products.html?category=trending">Trending</a>
       </nav>
 
-      <div class="search">
-        <input
-          id="searchInput"
-          type="search"
-          placeholder="Search products..."
-          aria-label="Search products"
-        >
+      <div class="header-actions">
+        <a href="products.html#search" class="header-action">⌕</a>
+        <a href="categories.html" class="header-action">☰</a>
       </div>
 
     </div>
-
   </header>
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    &nbsp; / &nbsp;
+    <a href="products.html">Products</a>
+    &nbsp; / &nbsp;
+    Shoes
+    &nbsp; / &nbsp;
+    Classic White Sneakers
+  </div>
 
   <main>
 
-    <!-- HERO -->
+    <section class="product">
 
-    <section class="hero">
+      <!-- PRODUCT IMAGE -->
 
-      <div class="eyebrow">
-        Veyra / Product Discovery
+      <div class="gallery">
+
+        <div class="main-image">
+
+          <span class="image-badge">
+            Featured
+          </span>
+
+          <img
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=90"
+            alt="Classic White Sneakers"
+          >
+
+        </div>
+
       </div>
 
-      <h1>
-        Discover<br>your next find.
-      </h1>
+      <!-- PRODUCT INFORMATION -->
 
-      <p>
-        Explore fashion products selected for modern style.
-        Browse clothing, footwear, bags and accessories from
-        across the web.
-      </p>
+      <div class="product-info">
+
+        <div class="category">
+          Women & Men · Shoes
+        </div>
+
+        <h1>
+          Classic White Sneakers
+        </h1>
+
+        <div class="rating">
+
+          <span class="stars">
+            ★★★★★
+          </span>
+
+          <span class="review-count">
+            Popular fashion pick
+          </span>
+
+        </div>
+
+        <div class="price">
+          $49.99
+        </div>
+
+        <div class="price-note">
+          Price shown for illustration. Availability and final price may vary by partner store.
+        </div>
+
+        <p class="description">
+          A clean and versatile sneaker designed to complement
+          everyday wardrobes. Its timeless silhouette makes it
+          an easy choice for casual outfits, streetwear looks
+          and relaxed weekend styling.
+        </p>
+
+        <div class="details">
+
+          <div class="detail-row">
+            <span class="detail-label">Category</span>
+            <span class="detail-value">Shoes</span>
+          </div>
+
+          <div class="detail-row">
+            <span class="detail-label">Style</span>
+            <span class="detail-value">Casual / Everyday</span>
+          </div>
+
+          <div class="detail-row">
+            <span class="detail-label">Color</span>
+            <span class="detail-value">White</span>
+          </div>
+
+          <div class="detail-row">
+            <span class="detail-label">Veyra collection</span>
+            <span class="detail-value">Trending Now</span>
+          </div>
+
+        </div>
+
+        <div class="deal-box">
+
+          <h3>
+            Find this style
+          </h3>
+
+          <p>
+            Explore the available offer from our partner store.
+            Veyra helps you discover products; the final purchase
+            takes place on the retailer's website.
+          </p>
+
+          <!--
+            IMPORTANT:
+            Replace the example URL below with your REAL
+            Admitad affiliate tracking link after approval.
+          -->
+
+          <a
+            class="deal-button"
+            href="https://example.com/affiliate/test-001"
+            target="_blank"
+            rel="nofollow sponsored noopener"
+          >
+            View Available Offer
+          </a>
+
+          <div class="affiliate-note">
+            Some links on Veyra may be affiliate links. We may
+            receive a commission when you make a qualifying purchase,
+            at no additional cost to you.
+          </div>
+
+        </div>
+
+        <a
+          href="products.html"
+          class="back-link"
+        >
+          ← Back to all products
+        </a>
+
+      </div>
 
     </section>
 
-    <!-- PRODUCTS -->
+    <!-- WHY VEYRA -->
 
-    <section class="catalog">
+    <section class="why">
 
-      <div class="catalog-top">
+      <div class="why-inner">
 
-        <div class="catalog-title">
-
-          <h2>Featured products</h2>
-
-          <p>
-            A selection of fashion worth discovering.
-          </p>
-
+        <div class="section-eyebrow">
+          The Veyra experience
         </div>
 
-        <div class="filters">
+        <h2>
+          More than a product page.
+        </h2>
 
-          <button class="filter active" data-filter="all">
-            All
-          </button>
+        <div class="why-grid">
 
-          <button class="filter" data-filter="women">
-            Women
-          </button>
+          <div class="why-card">
+            <span>✦</span>
 
-          <button class="filter" data-filter="men">
-            Men
-          </button>
+            <h3>
+              Curated discovery
+            </h3>
 
-          <button class="filter" data-filter="shoes">
-            Shoes
-          </button>
+            <p>
+              We organize fashion into simple collections
+              so discovering your next style feels effortless.
+            </p>
+          </div>
 
-          <button class="filter" data-filter="accessories">
-            Accessories
-          </button>
+          <div class="why-card">
+            <span>⌕</span>
+
+            <h3>
+              Explore the market
+            </h3>
+
+            <p>
+              Discover products and styles from partner
+              retailers across different fashion categories.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <span>♡</span>
+
+            <h3>
+              Inspiration first
+            </h3>
+
+            <p>
+              Veyra is built around fashion inspiration,
+              helping you discover ideas before you shop.
+            </p>
+          </div>
 
         </div>
 
       </div>
 
-      <div class="grid" id="productGrid">
+    </section>
 
-        <!-- PRODUCT 1 -->
+    <!-- RELATED PRODUCTS -->
 
-        <article class="card" data-category="shoes" data-name="classic white sneakers">
+    <section class="related">
 
-          <div class="image-wrap">
+      <div class="related-heading">
 
-            <span class="badge">
-              Trending
-            </span>
-
-            <img
-              src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=90"
-              alt="Classic white sneakers"
-              loading="lazy"
-            >
-
+        <div>
+          <div class="section-eyebrow">
+            Keep exploring
           </div>
 
-          <div class="card-content">
+          <h2>
+            You may also like
+          </h2>
+        </div>
 
-            <div class="category">
-              Footwear
+        <a href="products.html">
+          View all products
+        </a>
+
+      </div>
+
+      <div class="related-grid">
+
+        <a href="product.html" class="related-card">
+
+          <div class="related-image">
+            <img
+              src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=85"
+              alt="Modern heels"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="related-info">
+            <div class="related-category">
+              Women · Shoes
             </div>
 
             <h3>
-              Classic White Sneakers
+              Modern Everyday Heels
             </h3>
 
-            <p class="card-description">
-              A clean everyday sneaker designed to work with almost any look.
-            </p>
-
-            <div class="card-bottom">
-
-              <span class="price">
-                Discover
-              </span>
-
-              <a
-                href="product.html"
-                class="discover"
-              >
-                View product →
-              </a>
-
+            <div class="related-price">
+              $64.99
             </div>
-
           </div>
 
-        </article>
+        </a>
 
-        <!-- PRODUCT 2 -->
+        <a href="product.html" class="related-card">
 
-        <article class="card" data-category="accessories" data-name="leather shoulder bag">
-
-          <div class="image-wrap">
-
-            <span class="badge">
-              Editor's pick
-            </span>
-
+          <div class="related-image">
             <img
-              src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=90"
+              src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=85"
+              alt="Classic jacket"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="related-info">
+            <div class="related-category">
+              Men · Jackets
+            </div>
+
+            <h3>
+              Classic Denim Jacket
+            </h3>
+
+            <div class="related-price">
+              $89.99
+            </div>
+          </div>
+
+        </a>
+
+        <a href="product.html" class="related-card">
+
+          <div class="related-image">
+            <img
+              src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=85"
               alt="Leather shoulder bag"
               loading="lazy"
             >
-
           </div>
 
-          <div class="card-content">
-
-            <div class="category">
-              Accessories
+          <div class="related-info">
+            <div class="related-category">
+              Women · Bags
             </div>
 
             <h3>
               Leather Shoulder Bag
             </h3>
 
-            <p class="card-description">
-              A timeless everyday accessory with a refined silhouette.
-            </p>
-
-            <div class="card-bottom">
-
-              <span class="price">
-                Discover
-              </span>
-
-              <a
-                href="product.html"
-                class="discover"
-              >
-                View product →
-              </a>
-
+            <div class="related-price">
+              $69.99
             </div>
-
           </div>
 
-        </article>
+        </a>
 
-        <!-- PRODUCT 3 -->
+        <a href="product.html" class="related-card">
 
-        <article class="card" data-category="men" data-name="classic leather jacket">
-
-          <div class="image-wrap">
-
-            <span class="badge">
-              New
-            </span>
-
+          <div class="related-image">
             <img
-              src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=90"
-              alt="Classic leather jacket"
+              src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=85"
+              alt="Elegant summer dress"
               loading="lazy"
             >
-
           </div>
 
-          <div class="card-content">
-
-            <div class="category">
-              Men
+          <div class="related-info">
+            <div class="related-category">
+              Women · Dresses
             </div>
 
             <h3>
-              Classic Leather Jacket
+              Elegant Summer Dress
             </h3>
 
-            <p class="card-description">
-              A versatile outer layer built around timeless everyday style.
-            </p>
-
-            <div class="card-bottom">
-
-              <span class="price">
-                Discover
-              </span>
-
-              <a
-                href="product.html"
-                class="discover"
-              >
-                View product →
-              </a>
-
+            <div class="related-price">
+              $79.99
             </div>
-
           </div>
 
-        </article>
-
-        <!-- PRODUCT 4 -->
-
-        <article class="card" data-category="women" data-name="modern fashion outfit">
-
-          <div class="image-wrap">
-
-            <img
-              src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=90"
-              alt="Modern women's fashion outfit"
-              loading="lazy"
-            >
-
-          </div>
-
-          <div class="card-content">
-
-            <div class="category">
-              Women
-            </div>
-
-            <h3>
-              Modern Fashion Outfit
-            </h3>
-
-            <p class="card-description">
-              A contemporary look combining simple pieces with modern styling.
-            </p>
-
-            <div class="card-bottom">
-
-              <span class="price">
-                Discover
-              </span>
-
-              <a
-                href="product.html"
-                class="discover"
-              >
-                View product →
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
-        <!-- PRODUCT 5 -->
-
-        <article class="card" data-category="women" data-name="minimal fashion look">
-
-          <div class="image-wrap">
-
-            <span class="badge">
-              Trending
-            </span>
-
-            <img
-              src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=90"
-              alt="Minimal women's fashion"
-              loading="lazy"
-            >
-
-          </div>
-
-          <div class="card-content">
-
-            <div class="category">
-              Women
-            </div>
-
-            <h3>
-              Minimal Fashion Look
-            </h3>
-
-            <p class="card-description">
-              Clean lines and versatile pieces for effortless everyday dressing.
-            </p>
-
-            <div class="card-bottom">
-
-              <span class="price">
-                Discover
-              </span>
-
-              <a
-                href="product.html"
-                class="discover"
-              >
-                View product →
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
-        <!-- PRODUCT 6 -->
-
-        <article class="card" data-category="men" data-name="modern mens outfit">
-
-          <div class="image-wrap">
-
-            <img
-              src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=900&q=90"
-              alt="Modern men's outfit"
-              loading="lazy"
-            >
-
-          </div>
-
-          <div class="card-content">
-
-            <div class="category">
-              Men
-            </div>
-
-            <h3>
-              Modern Men's Outfit
-            </h3>
-
-            <p class="card-description">
-              A polished everyday combination with a contemporary feel.
-            </p>
-
-            <div class="card-bottom">
-
-              <span class="price">
-                Discover
-              </span>
-
-              <a
-                href="product.html"
-                class="discover"
-              >
-                View product →
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
-        <!-- PRODUCT 7 -->
-
-        <article class="card" data-category="shoes" data-name="premium fashion shoes">
-
-          <div class="image-wrap">
-
-            <img
-              src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=900&q=90"
-              alt="Premium fashion shoes"
-              loading="lazy"
-            >
-
-          </div>
-
-          <div class="card-content">
-
-            <div class="category">
-              Footwear
-            </div>
-
-            <h3>
-              Premium Fashion Shoes
-            </h3>
-
-            <p class="card-description">
-              A refined footwear choice for elevated everyday outfits.
-            </p>
-
-            <div class="card-bottom">
-
-              <span class="price">
-                Discover
-              </span>
-
-              <a
-                href="product.html"
-                class="discover"
-              >
-                View product →
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
-        <!-- PRODUCT 8 -->
-
-        <article class="card" data-category="accessories" data-name="fashion accessories">
-
-          <div class="image-wrap">
-
-            <span class="badge">
-              Featured
-            </span>
-
-            <img
-              src="https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?auto=format&fit=crop&w=900&q=90"
-              alt="Fashion accessories"
-              loading="lazy"
-            >
-
-          </div>
-
-          <div class="card-content">
-
-            <div class="category">
-              Accessories
-            </div>
-
-            <h3>
-              Everyday Accessories
-            </h3>
-
-            <p class="card-description">
-              Finishing pieces selected to complete a modern wardrobe.
-            </p>
-
-            <div class="card-bottom">
-
-              <span class="price">
-                Discover
-              </span>
-
-              <a
-                href="product.html"
-                class="discover"
-              >
-                View product →
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
+        </a>
 
       </div>
-
-      <!-- TRUST / INFORMATION -->
-
-      <div class="info-strip">
-
-        <div class="info-item">
-          <strong>Curated discovery</strong>
-          <span>
-            Fashion products selected around current styles and everyday needs.
-          </span>
-        </div>
-
-        <div class="info-item">
-          <strong>Explore & compare</strong>
-          <span>
-            Discover products from different fashion categories in one place.
-          </span>
-        </div>
-
-        <div class="info-item">
-          <strong>Updated regularly</strong>
-          <span>
-            Veyra is designed to grow with new fashion discoveries over time.
-          </span>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- NEWSLETTER / BRAND MESSAGE -->
-
-    <section class="newsletter">
-
-      <div class="eyebrow">
-        Veyra
-      </div>
-
-      <h2>
-        Your style.<br>
-        Your next discovery.
-      </h2>
-
-      <p>
-        Veyra brings fashion discoveries together so you can spend less
-        time searching and more time finding pieces worth wearing.
-      </p>
 
     </section>
 
@@ -1095,17 +947,18 @@
 
   <footer>
 
-    <div class="footer-grid">
+    <div class="footer-main">
 
-      <div>
+      <div class="footer-brand">
 
-        <div class="footer-logo">
+        <div class="logo">
           VEYRA
         </div>
 
-        <p class="footer-about">
-          Veyra is a fashion discovery platform helping people discover
-          clothing, footwear, accessories and style from across the web.
+        <p>
+          Veyra is a modern fashion discovery platform
+          helping people explore styles, products and
+          trends from across the web.
         </p>
 
       </div>
@@ -1117,6 +970,7 @@
         <a href="index.html">Home</a>
         <a href="categories.html">Categories</a>
         <a href="products.html">Products</a>
+        <a href="products.html?category=trending">Trending</a>
 
       </div>
 
@@ -1124,91 +978,35 @@
 
         <h4>Categories</h4>
 
-        <a href="products.html">Women</a>
-        <a href="products.html">Men</a>
-        <a href="products.html">Shoes</a>
-        <a href="products.html">Accessories</a>
+        <a href="products.html?category=women">Women</a>
+        <a href="products.html?category=men">Men</a>
+        <a href="products.html?category=shoes">Shoes</a>
+        <a href="products.html?category=bags">Bags</a>
+        <a href="products.html?category=accessories">Accessories</a>
 
       </div>
 
       <div class="footer-column">
 
-        <h4>Information</h4>
+        <h4>Veyra</h4>
 
-        <a href="#">About Veyra</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms</a>
-        <a href="#">Affiliate Disclosure</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="affiliate-disclosure.html">
+          Affiliate Disclosure
+        </a>
 
       </div>
 
     </div>
 
     <div class="footer-bottom">
-
-      <span>
-        © 2026 Veyra. All rights reserved.
-      </span>
-
-      <span>
-        Fashion discovery made simple.
-      </span>
-
+      © 2026 Veyra. All rights reserved.
     </div>
 
   </footer>
-
-  <script>
-    const filters = document.querySelectorAll(".filter");
-    const cards = document.querySelectorAll(".card");
-    const searchInput = document.getElementById("searchInput");
-
-    let currentFilter = "all";
-
-    filters.forEach(filter => {
-
-      filter.addEventListener("click", () => {
-
-        filters.forEach(item => item.classList.remove("active"));
-
-        filter.classList.add("active");
-
-        currentFilter = filter.dataset.filter;
-
-        updateProducts();
-
-      });
-
-    });
-
-    searchInput.addEventListener("input", updateProducts);
-
-    function updateProducts() {
-
-      const searchTerm = searchInput.value.toLowerCase().trim();
-
-      cards.forEach(card => {
-
-        const category = card.dataset.category;
-        const name = card.dataset.name;
-
-        const matchesFilter =
-          currentFilter === "all" ||
-          category === currentFilter;
-
-        const matchesSearch =
-          !searchTerm ||
-          name.includes(searchTerm);
-
-        card.style.display =
-          matchesFilter && matchesSearch
-            ? ""
-            : "none";
-
-      });
-
-    }
-  </script>
 
 </body>
 </html>

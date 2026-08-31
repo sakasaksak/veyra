@@ -75,10 +75,6 @@
       font: inherit;
     }
 
-    /* =========================
-       TOP ANNOUNCEMENT
-    ========================= */
-
     .announcement {
       background: var(--black);
       color: white;
@@ -88,10 +84,6 @@
       letter-spacing: .08em;
       text-transform: uppercase;
     }
-
-    /* =========================
-       HEADER
-    ========================= */
 
     header {
       position: sticky;
@@ -159,10 +151,6 @@
       opacity: .55;
     }
 
-    /* =========================
-       NAVIGATION
-    ========================= */
-
     .nav {
       border-top: 1px solid var(--border);
     }
@@ -187,10 +175,6 @@
     .nav-inner a:hover {
       opacity: .5;
     }
-
-    /* =========================
-       HERO
-    ========================= */
 
     .hero {
       position: relative;
@@ -279,10 +263,6 @@
       color: var(--black);
     }
 
-    /* =========================
-       SECTION
-    ========================= */
-
     .section {
       max-width: var(--max);
       margin: auto;
@@ -318,10 +298,6 @@
       padding-bottom: 5px;
     }
 
-    /* =========================
-       CATEGORY STRIP
-    ========================= */
-
     .category-strip {
       max-width: var(--max);
       margin: auto;
@@ -344,10 +320,6 @@
       transform: translateY(-3px);
       background: var(--soft);
     }
-
-    /* =========================
-       PRODUCT GRID
-    ========================= */
 
     .product-grid {
       display: grid;
@@ -419,10 +391,6 @@
       font-weight: 800;
     }
 
-    /* =========================
-       FEATURED BANNER
-    ========================= */
-
     .feature-banner {
       max-width: var(--max);
       margin: auto;
@@ -456,10 +424,6 @@
       color: rgba(255,255,255,.85);
       margin-bottom: 28px;
     }
-
-    /* =========================
-       TWO COLLECTIONS
-    ========================= */
 
     .collections {
       max-width: var(--max);
@@ -522,10 +486,6 @@
       color: rgba(255,255,255,.85);
       margin-bottom: 22px;
     }
-
-    /* =========================
-       OCCASION EDIT
-    ========================= */
 
     .occasion {
       background: var(--cream);
@@ -599,10 +559,6 @@
       background-image: url("https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=900&q=90");
     }
 
-    /* =========================
-       TRENDING STYLES
-    ========================= */
-
     .trend-grid {
       display: grid;
       grid-template-columns: 1.5fr 1fr 1fr;
@@ -667,10 +623,6 @@
       background-image: url("https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1000&q=90");
     }
 
-    /* =========================
-       WHY VEYRA
-    ========================= */
-
     .why {
       background: var(--black);
       color: white;
@@ -722,10 +674,6 @@
       line-height: 1.8;
     }
 
-    /* =========================
-       SEO / ABOUT
-    ========================= */
-
     .about {
       max-width: 900px;
       margin: auto;
@@ -745,10 +693,6 @@
       font-size: 15px;
       margin-bottom: 15px;
     }
-
-    /* =========================
-       NEWSLETTER
-    ========================= */
 
     .newsletter {
       background: var(--cream);
@@ -790,10 +734,6 @@
       cursor: pointer;
       padding: 0 5px;
     }
-
-    /* =========================
-       FOOTER
-    ========================= */
 
     footer {
       background: var(--black);
@@ -851,10 +791,6 @@
       color: #777;
       font-size: 11px;
     }
-
-    /* =========================
-       RESPONSIVE
-    ========================= */
 
     @media (max-width: 1000px) {
       .product-grid {
@@ -1029,13 +965,9 @@
 
 <body>
 
-  <!-- ANNOUNCEMENT -->
-
   <div class="announcement">
     Discover fashion worth knowing about
   </div>
-
-  <!-- HEADER -->
 
   <header>
 
@@ -1079,8 +1011,6 @@
 
   </header>
 
-  <!-- HERO -->
-
   <main>
 
     <section class="hero">
@@ -1114,46 +1044,23 @@
 
     </section>
 
-    <!-- CATEGORY NAV -->
-
     <div class="category-strip">
 
-      <a class="category-item" href="categories.html">
-        WOMEN
-      </a>
-
-      <a class="category-item" href="categories.html">
-        MEN
-      </a>
-
-      <a class="category-item" href="categories.html">
-        SHOES
-      </a>
-
-      <a class="category-item" href="categories.html">
-        BAGS
-      </a>
-
-      <a class="category-item" href="categories.html">
-        ACCESSORIES
-      </a>
-
-      <a class="category-item" href="categories.html">
-        BEAUTY
-      </a>
+      <a class="category-item" href="categories.html">WOMEN</a>
+      <a class="category-item" href="categories.html">MEN</a>
+      <a class="category-item" href="categories.html">SHOES</a>
+      <a class="category-item" href="categories.html">BAGS</a>
+      <a class="category-item" href="categories.html">ACCESSORIES</a>
+      <a class="category-item" href="categories.html">BEAUTY</a>
 
     </div>
-
-    <!-- TRENDING -->
 
     <section class="section" id="trending">
 
       <div class="section-header">
 
         <div>
-          <div class="eyebrow">
-            Curated for you
-          </div>
+          <div class="eyebrow">Curated for you</div>
 
           <h2 class="section-title">
             Trending Now
@@ -1177,10 +1084,13 @@
               loading="lazy"
             >
           </div>
+
           <div class="product-info">
             <div class="product-category">Women's Fashion</div>
             <h3 class="product-name">Modern Everyday Look</h3>
-            <p class="product-description">Effortless pieces for an elevated wardrobe.</p>
+            <p class="product-description">
+              Effortless pieces for an elevated wardrobe.
+            </p>
             <div class="product-price">Discover</div>
           </div>
         </article>
@@ -1194,10 +1104,13 @@
               loading="lazy"
             >
           </div>
+
           <div class="product-info">
             <div class="product-category">Women's Fashion</div>
             <h3 class="product-name">The New Season Edit</h3>
-            <p class="product-description">Fresh silhouettes and timeless essentials.</p>
+            <p class="product-description">
+              Fresh silhouettes and timeless essentials.
+            </p>
             <div class="product-price">Discover</div>
           </div>
         </article>
@@ -1210,10 +1123,13 @@
               loading="lazy"
             >
           </div>
+
           <div class="product-info">
             <div class="product-category">Shoes</div>
             <h3 class="product-name">Classic Sneakers</h3>
-            <p class="product-description">Clean everyday footwear for modern style.</p>
+            <p class="product-description">
+              Clean everyday footwear for modern style.
+            </p>
             <div class="product-price">Discover</div>
           </div>
         </article>
@@ -1227,10 +1143,13 @@
               loading="lazy"
             >
           </div>
+
           <div class="product-info">
             <div class="product-category">Bags</div>
             <h3 class="product-name">Everyday Leather Bag</h3>
-            <p class="product-description">A versatile accessory for every occasion.</p>
+            <p class="product-description">
+              A versatile accessory for every occasion.
+            </p>
             <div class="product-price">Discover</div>
           </div>
         </article>
@@ -1238,8 +1157,6 @@
       </div>
 
     </section>
-
-    <!-- FEATURE -->
 
     <div class="feature-banner">
 
@@ -1270,8 +1187,6 @@
 
     </div>
 
-    <!-- WOMEN / MEN -->
-
     <section class="collections">
 
       <a class="collection women" href="categories.html">
@@ -1281,9 +1196,7 @@
             Explore the edit
           </div>
 
-          <h3>
-            Women's Fashion
-          </h3>
+          <h3>Women's Fashion</h3>
 
           <p>
             Dresses, outfits, shoes, bags and more.
@@ -1303,9 +1216,7 @@
             Explore the edit
           </div>
 
-          <h3>
-            Men's Fashion
-          </h3>
+          <h3>Men's Fashion</h3>
 
           <p>
             Modern essentials, streetwear and everyday style.
@@ -1320,16 +1231,12 @@
 
     </section>
 
-    <!-- WOMEN'S PRODUCTS -->
-
     <section class="section">
 
       <div class="section-header">
 
         <div>
-          <div class="eyebrow">
-            Women's edit
-          </div>
+          <div class="eyebrow">Women's edit</div>
 
           <h2 class="section-title">
             Women's Fashion
@@ -1352,10 +1259,13 @@
               loading="lazy"
             >
           </div>
+
           <div class="product-info">
             <div class="product-category">Dresses</div>
             <h3 class="product-name">Elegant Occasion Dress</h3>
-            <p class="product-description">A polished look for special moments.</p>
+            <p class="product-description">
+              A polished look for special moments.
+            </p>
             <div class="product-price">Discover</div>
           </div>
         </article>
@@ -1368,10 +1278,13 @@
               loading="lazy"
             >
           </div>
+
           <div class="product-info">
             <div class="product-category">Casual</div>
             <h3 class="product-name">Relaxed Weekend Style</h3>
-            <p class="product-description">Comfortable pieces with a refined finish.</p>
+            <p class="product-description">
+              Comfortable pieces with a refined finish.
+            </p>
             <div class="product-price">Discover</div>
           </div>
         </article>
@@ -1384,10 +1297,13 @@
               loading="lazy"
             >
           </div>
+
           <div class="product-info">
             <div class="product-category">Clothing</div>
             <h3 class="product-name">Wardrobe Essentials</h3>
-            <p class="product-description">The foundation of an effortless wardrobe.</p>
+            <p class="product-description">
+              The foundation of an effortless wardrobe.
+            </p>
             <div class="product-price">Discover</div>
           </div>
         </article>
@@ -1400,10 +1316,13 @@
               loading="lazy"
             >
           </div>
+
           <div class="product-info">
             <div class="product-category">Trending</div>
             <h3 class="product-name">City Style</h3>
-            <p class="product-description">Contemporary looks inspired by the streets.</p>
+            <p class="product-description">
+              Contemporary looks inspired by the streets.
+            </p>
             <div class="product-price">Discover</div>
           </div>
         </article>
@@ -1412,8 +1331,6 @@
 
     </section>
 
-    <!-- OCCASION -->
-
     <section class="occasion" id="occasion">
 
       <div class="section">
@@ -1421,9 +1338,7 @@
         <div class="section-header">
 
           <div>
-            <div class="eyebrow">
-              Shop by moment
-            </div>
+            <div class="eyebrow">Shop by moment</div>
 
             <h2 class="section-title">
               Occasion Edit
@@ -1472,16 +1387,12 @@
 
     </section>
 
-    <!-- MORE PRODUCTS -->
-
     <section class="section">
 
       <div class="section-header">
 
         <div>
-          <div class="eyebrow">
-            More to discover
-          </div>
+          <div class="eyebrow">More to discover</div>
 
           <h2 class="section-title">
             Bags, Shoes & Accessories
@@ -1504,10 +1415,13 @@
               loading="lazy"
             >
           </div>
+
           <div class="product-info">
             <div class="product-category">Bags</div>
             <h3 class="product-name">Structured Everyday Bag</h3>
-            <p class="product-description">A polished finishing touch for every look.</p>
+            <p class="product-description">
+              A polished finishing touch for every look.
+            </p>
             <div class="product-price">Discover</div>
           </div>
         </article>
@@ -1520,10 +1434,13 @@
               loading="lazy"
             >
           </div>
+
           <div class="product-info">
             <div class="product-category">Shoes</div>
             <h3 class="product-name">Statement Heels</h3>
-            <p class="product-description">A standout pair for special occasions.</p>
+            <p class="product-description">
+              A standout pair for special occasions.
+            </p>
             <div class="product-price">Discover</div>
           </div>
         </article>
@@ -1536,10 +1453,13 @@
               loading="lazy"
             >
           </div>
+
           <div class="product-info">
             <div class="product-category">Accessories</div>
             <h3 class="product-name">Minimal Accessories</h3>
-            <p class="product-description">Small details that complete the look.</p>
+            <p class="product-description">
+              Small details that complete the look.
+            </p>
             <div class="product-price">Discover</div>
           </div>
         </article>
@@ -1552,10 +1472,13 @@
               loading="lazy"
             >
           </div>
+
           <div class="product-info">
             <div class="product-category">Jewelry</div>
             <h3 class="product-name">Everyday Jewelry</h3>
-            <p class="product-description">Simple pieces designed to layer beautifully.</p>
+            <p class="product-description">
+              Simple pieces designed to layer beautifully.
+            </p>
             <div class="product-price">Discover</div>
           </div>
         </article>
@@ -1564,16 +1487,12 @@
 
     </section>
 
-    <!-- TRENDING STYLES -->
-
     <section class="section">
 
       <div class="section-header">
 
         <div>
-          <div class="eyebrow">
-            Inspiration
-          </div>
+          <div class="eyebrow">Inspiration</div>
 
           <h2 class="section-title">
             Trending Styles
@@ -1612,8 +1531,6 @@
       </div>
 
     </section>
-
-    <!-- WHY VEYRA -->
 
     <section class="why">
 
@@ -1662,8 +1579,6 @@
 
     </section>
 
-    <!-- ABOUT / SEO -->
-
     <section class="about" id="about">
 
       <div class="eyebrow">
@@ -1696,8 +1611,6 @@
 
     </section>
 
-    <!-- NEWSLETTER -->
-
     <section class="newsletter">
 
       <h2>
@@ -1712,6 +1625,7 @@
         class="newsletter-form"
         onsubmit="event.preventDefault(); alert('Thanks for joining Veyra.');"
       >
+
         <input
           type="email"
           placeholder="Your email address"
@@ -1722,13 +1636,12 @@
         <button type="submit">
           JOIN →
         </button>
+
       </form>
 
     </section>
 
   </main>
-
-  <!-- FOOTER -->
 
   <footer>
 
@@ -1802,6 +1715,10 @@
     </div>
 
   </footer>
+
+  <!-- PROFITABLE RATE CPM -->
+  <script src="https://pl31117388.profitableratecpmnetwork.com/be/99/76/be9976ba32498096a0a586e133adf88c.js"></script>
+  <script src="https://pl31117389.profitableratecpmnetwork.com/91/04/56/9104568974e3e2df8c3b3e1f923ae8be.js"></script>
 
 </body>
 </html>
